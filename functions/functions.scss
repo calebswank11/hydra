@@ -1,0 +1,20 @@
+@import '../variables/colors.scss';
+@import '../variables/variables.scss';
+// exponential function
+@function pow($number, $exponent) {
+  $value: $min;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@function transitionFunct($node){
+  // @if node  = array
+  // @else node is single
+  @return $node;
+}

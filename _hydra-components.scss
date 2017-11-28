@@ -1,8 +1,4 @@
-
-// ----
-// Sass (v3.4.21)
-// Compass (v1.0.3)
-// ----
+@import 'imports.scss';
 
 // Things to consider
 // custom components
@@ -18,64 +14,6 @@
 // items that you would want in your css
 
 // modular scale
-// defines every aspect of sizing outside columns
-$base: 1.1;
-$ratio: 1.23;
-$breakpointMin: 480;
-$breakpointMax: 1200;
-$lineHeightRatio: 1.35;
-$unitOfMeasurement: 'rem';
-$min : $base/$ratio;
-// define columns and breakpoints
-$sm-columns: 10;
-$md-columns: 14;
-$lg-columns: 12;
-$maxScreenSize: 1400;
-$minScreenSize: 480;
-$units: '%'; // vw/ %/ px
-$amount: 100; //percent, px etc
-$colSm: 'col-sm-'; // define column names if you wish
-$colMd: 'col-md-';
-$colLg : 'col-lg-';
-
-$ltGrey : #d8d8d8;
-$primary : #387ef5;
-$blue600 : #091B39;
-$blue400 :#09379E;
-$blue300: #1850D7;
-$blue100: #90adf3;
-$blue000:#dae5ff;
-$red800: #4e1615;
-$red400 : #CA3A35;
-$red100 : #ffdfde;
-$green400: #1ad41a;
-$grey500 : #3F3B3B;
-$grey400 : #7E7E7E;
-$grey300 : #D1D1D1;
-$grey200 : #e0e0e0;
-$grey100 : #e8e8e8;
-$white: #ffffff;
-$black : #1B1B1B;
-
-$colorArray: (
-  ("ltGrey", $ltGrey),
-  ("primary", $primary),
-  ("blue600", $blue600),
-  ("blue400", $blue400),
-  ("blue300", $blue300),
-  ("blue100", $blue100),
-  ("blue000", $blue000),
-  ("red800", $red800),
-  ("red400", $red400),
-  ("red100", $red100),
-  ("green400", $green400),
-  ("grey500", $grey500),
-  ("grey400", $grey400),
-  ("grey300", $grey300),
-  ("grey200", $grey200),
-  ("white", $white),
-  ("black", $black)
-);
 
 // $colors : ("black", "white", "green", "#e4e4e4");
 // @each $number in $colors {
@@ -91,20 +29,8 @@ $colorArray: (
 // }
 // default border radius
 // generic to all borders
-$border-radius: 3px;
 
-// exponential function
-@function pow($number, $exponent) {
-  $value: $min;
 
-  @if $exponent > 0 {
-    @for $i from 1 through $exponent {
-      $value: $value * $number;
-    }
-  }
-
-  @return $value;
-}
 @for $i from 1 through 9 {
 
   $modular-scale : (pow($ratio, $i) * $min) * 1#{$unitOfMeasurement};
@@ -116,6 +42,27 @@ $border-radius: 3px;
     font-weight: $i*100;
   }
   .fntsz#{$i}00 {font-size: $modular-scale;}
+  // define mobile font sizes
+  @media screen and (max-width:#{$minScreenSize}px) {
+    $modular-scale-mobile :(pow($ratio, $i) * $min * 1.2) * 1#{$unitOfMeasurement};
+    $lhScale-mobile : ((pow($ratio, $i) * $min) * $lineHeightRatio * 1.2) * 1#{$unitOfMeasurement};
+    .text#{$i}00, h#{7 - $i} {
+      font-size: $modular-scale-mobile;
+      line-height: $lhScale-mobile;
+      font-weight: $i*100;
+    }
+    .fntsz#{$i}00 {font-size: $modular-scale;}
+  }
+  // @media screen and (min-width:#{$maxScreenSize}px) {
+  //   $modular-scale-mobile : ((pow($ratio, $i) * $min) * 1#{$unitOfMeasurement}) * 1.2;
+  //   $lhScale-mobile : (((pow($ratio, $i) * $min) * $lineHeightRatio) * 1#{$unitOfMeasurement}) * 1.2;
+  //   .text#{$i}00, h#{7 - $i} {
+  //     font-size: $modular-scale-mobile;
+  //     line-height: $lhScale-mobile;
+  //     font-weight: $i*100;
+  //   }
+  //   .fntsz#{$i}00 {font-size: $modular-scale;}
+  // }
   .lh#{$i}00 {line-height: $lhScale;}
   .fw#{$i}00 {font-weight: $i*100;}
   .margin#{$i}00 {margin: $modular-scale;}
@@ -325,42 +272,13 @@ $button2Border: #{$grey500} 1px solid;
 //     height: 100%
 //   }
 // }
-//define animations
-$fadeAnimation: fadeIn;
-$scaleAnimation: scaleOut;
-$scaleHorizontalAnimation: scaleX;
-$scaleVerticalAnimation: scaleY;
-$pulseAnimation: pulse;
-$slideInFromBottom: slideInFromBottom;
-$slideInFromTop: slideInFromTop;
-$slideInFromLeft: slideInFromLeft;
-$slideInFromRight: slideInFromRight;
-$borderExpandAnimation: borderExpand;
-//define animation type
-$buttonAnimationOne: $scaleVerticalAnimation;
-$buttonAnimationTwo: $scaleVerticalAnimation;
-$buttonAnimationDuration: 0.25s;
-$buttonAnimationDelay: 0.0s;
-$buttonAnimationTimingFunction: ease-in-out;
-$buttonAnimationRepeat: none;
 
-$transitionDuration: 0.25s;
-$transitionAnimationDelay: 0.0s;
-$transitionTimingFunction: ease-in-out;
-
-@function transitionFunct($node){
-  // @if node  = array
-  // @else node is single
-  @return $node;
-}
 @mixin transition($type) {
   transition: $type $transitionDuration $transitionTimingFunction;
 }
 .transition {
   @include transition(transitionFunct(color));
 }
-
-
 
 
 // $buttonHoverState: ;
@@ -511,6 +429,10 @@ nav[role="navigation"] {
     // }
   }
   &.standard {
+    background-color: $white;
+    * {
+      background-color: $white;
+    }
     & > ul {
       @extend .df;
       @extend .ais;
@@ -1173,4 +1095,73 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+}
+
+// bubble menu sass
+menu-bubble {
+  .bubblemenuParent {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 80px;
+    pointer-events: none;
+  }
+  .bubblemenu {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    background-color: $main;
+    height: #{$width}px;
+    width: #{$width}px;
+    border-radius: 50%;
+    pointer-events: all;
+    ion-icon {
+      font-size: 3rem;
+      color: white;
+      position: absolute;
+      text-align: center;
+      width: #{$width}px;
+      line-height: calc(#{$width}px - 1px);
+      font-weight: 100;
+      z-index: 1000;
+    }
+    .bubbleMenuItem {
+      height: #{$width}px;
+      width: #{$width}px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transition: transform .5s ease;
+      z-index: -1;
+      @for $i from 1 through $itemBase {
+        $rotation: 90 / ($itemBase - 1);
+        &:nth-of-type(#{$i}){
+          $current : ($rotation * $i) - $rotation; // minus $rotation to account for initial val of 0
+          transform: translateX(-50%)rotate(#{$current}deg)scale(0);
+          transition-delay: calc(.1 * #{$i}s);
+          &.active {
+            transform: translateX(-50%)rotate(#{$current}deg)scale(1);
+          }
+          & > div {
+            transform: rotate(#{$current * -1}deg);
+          }
+        }
+      }
+      $childWidth : $width * .7;
+      & > div {
+        border-radius: 50%;
+        width: #{$childWidth}px;
+        height: #{$childWidth}px;
+        background-color: $main;
+        left: calc((#{$width}px + 15px) * -1);
+        top: calc((#{$width}px - #{$childWidth}px) / 2);
+        position: absolute;
+        ion-icon {
+          width: #{$childWidth}px;
+          line-height: calc(#{$childWidth}px - 1px);
+          font-size: 2.25rem;
+        }
+      }
+    }
+  }
 }

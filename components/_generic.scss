@@ -1,0 +1,9 @@
+* {
+  font-family: 'Open Sans', arial, sans-srif;
+  font-size: 98%;
+  @extend .bxszbb;
+  @extend .color-grey500;
+}
+a {
+  @extend .color-blue400;
+}

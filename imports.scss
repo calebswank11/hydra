@@ -1,0 +1,32 @@
+// imports non repetitive scss
+@import 'variables/colors.scss';
+@import 'variables/variables.scss';
+@import 'functions/functions.scss';
+
+// check what you want
+
+// includeTables?
+$includeTables: true;
+$includeForms: true;
+$includeGeneric: true;
+$includeNavigation: true;
+
+
+
+
+
+
+
+
+@if $includeTables {
+  @import './components/tables.scss';
+}
+@if $includeForms {
+  @import './components/_forms.scss';
+}
+@if $includeGeneric {
+  @import './components/_generic.scss';
+}
+@if $includeNavigation {
+  @import './components/_navigation.scss';
+}

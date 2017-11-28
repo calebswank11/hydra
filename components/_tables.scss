@@ -1,0 +1,79 @@
+table {
+  thead {
+    @extend .bdc-blue300;
+    tr {
+      @extend .bgc-blue100;
+      th {
+        @extend .lh300;
+        @extend .pad5px;
+        @extend .color-white;
+        @extend .fw100;
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(2n-1) {
+        background-color: $blue000;
+      }
+    }
+  }
+  td {
+  }
+  &.table {
+    th {
+      // @extend .posr;
+      // &::before {
+      //   @extend .before;
+      //   @extend .db;
+      //   @extend .posa;
+      //   @extend .transY;
+      //   @extend .r-100;
+      //   width: 0;
+      //   height: 0;
+      //   @extend .border-solid;
+      //   border-width: 10px 5px 0 5px;
+      //   border-color: $blue300 transparent transparent transparent;
+      // }
+    }
+  }
+}
+// datatables
+#dataTables_wrapper {
+  @extend .clearfix;
+}
+.dataTables_info {
+  @extend .fntsz100;
+  @extend .fl;
+  @extend .row;
+  @extend .mt100;
+}
+.dataTables_paginate {
+  @extend .fr;
+  @extend .row;
+  @extend .mt100;
+  & > a {
+    @extend .pad10px;
+    @extend .border-solid;
+    @extend .brw100;
+    @extend .bdc-grey200;
+    &:last-of-type {
+      border: none;
+    }
+  }
+  & > span a {
+    @extend .pad10px;
+    @extend .border-solid;
+    @extend .brw100;
+    @extend .bdc-grey200;
+    @include transition(transitionFunct(color));
+    &.current {
+      @extend .bgc-blue300;
+      @extend .color-white;
+    }
+    &:hover {
+      @extend .bgc-blue100;
+      @extend .color-white;
+    }
+  }
+}

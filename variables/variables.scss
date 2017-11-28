@@ -1,0 +1,43 @@
+// defines every aspect of sizing outside columns
+$base: 1.1;
+$ratio: 1.23;
+$breakpointMin: 480;
+$breakpointMax: 1200;
+$lineHeightRatio: 1.35;
+$unitOfMeasurement: 'rem';
+$min : $base/$ratio;
+// define columns and breakpoints
+$sm-columns: 10;
+$md-columns: 14;
+$lg-columns: 12;
+$maxScreenSize: 1400;
+$minScreenSize: 768;
+$units: '%'; // vw/ %/ px
+$amount: 100; //percent, px etc
+$colSm: 'col-sm-'; // define column names if you wish
+$colMd: 'col-md-';
+$colLg : 'col-lg-';
+$border-radius: 3px;
+
+//define animations
+$fadeAnimation: fadeIn;
+$scaleAnimation: scaleOut;
+$scaleHorizontalAnimation: scaleX;
+$scaleVerticalAnimation: scaleY;
+$pulseAnimation: pulse;
+$slideInFromBottom: slideInFromBottom;
+$slideInFromTop: slideInFromTop;
+$slideInFromLeft: slideInFromLeft;
+$slideInFromRight: slideInFromRight;
+$borderExpandAnimation: borderExpand;
+//define animation type
+$buttonAnimationOne: $scaleVerticalAnimation;
+$buttonAnimationTwo: $scaleVerticalAnimation;
+$buttonAnimationDuration: 0.25s;
+$buttonAnimationDelay: 0.0s;
+$buttonAnimationTimingFunction: ease-in-out;
+$buttonAnimationRepeat: none;
+
+$transitionDuration: 0.25s;
+$transitionAnimationDelay: 0.0s;
+$transitionTimingFunction: ease-in-out;

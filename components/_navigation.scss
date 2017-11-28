@@ -1,0 +1,26 @@
+nav {
+  div {
+    @extend .db;
+    @extend .w100;
+  }
+  a, span {
+    @extend .db;
+    @extend .color-blue400;
+    @extend .tdn;
+    @extend .fntsz100;
+    @extend .fw600;
+    @extend .ttu;
+    @extend .border-solid;
+    @extend .bbw100;
+    @extend .bdc-grey200;
+    @extend .pad100;
+    transition: background-color .5s ease, color .5s ease;
+  }
+  a:hover {
+    @extend .bgc-grey200;
+    @extend .color-blue300;
+  }
+  span {
+    @extend .color-grey400;
+  }
+}
