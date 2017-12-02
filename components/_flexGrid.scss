@@ -1,0 +1,14 @@
+@mixin FlexGridPartial {
+  .flex-list {
+    @at-root {
+      ul#{&} {
+        @extend .df;
+        li {
+          @extend .df;
+          @include fg(1);
+          @extend .p0;
+        }
+      }
+    }
+  }
+}

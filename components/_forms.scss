@@ -1,48 +1,62 @@
-form {
-  &.list {
-    & > *:not(button) {
-      @extend .pb400;
+@mixin FormsPartial{
+  form {
+    &.list {
+      & > *:not(button) {
+        @extend .pb400;
+      }
+    }
+    &.stacked {
+      label {
+        @extend .db;
+        @extend .pb5px;
+      }
+      input[type="text"] {
+        @extend .w100;
+        @extend .fw100;
+      }
+      p {
+        @extend .m0;
+      }
     }
   }
-  &.stacked {
-    label {
-      @extend .db;
-      @extend .pb5px;
-    }
-    input[type="text"] {
-      @extend .w100;
-      @extend .fw100;
-    }
-    p {
-      @extend .m0;
-    }
-  }
-}
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  @extend .bw100;
-  @extend .bdc-blue300;
-  @extend .border-solid;
-  @extend .color-blue300;
-  @extend .pad200;
-  @extend .w100;
-  border-radius: 0;
-}
-.selectContainer {
-  @extend .posr;
-  @extend .dib;
-  &::before {
-    @extend .before;
-    @extend .posa;
-    @extend .transY;
-    @extend .r-10;
-    // break this out for triangle function
-    width: 0;
-    height: 0;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @extend .bw100;
+    @extend .bdc-secondary300;
     @extend .border-solid;
-    border-width: 10px 5px 0 5px;
-    border-color: $blue300 transparent transparent transparent;
+    @extend .color-secondary300;
+    @extend .pad200;
+    @extend .w100;
+    border-radius: 0;
+  }
+  .selectContainer {
+    @extend .posr;
+    @extend .dib;
+    &::before {
+      @extend .before;
+      @extend .posa;
+      @extend .transY;
+      @extend .r-10;
+      // break this out for triangle function
+      width: 0;
+      height: 0;
+      @extend .border-solid;
+      border-width: 10px 5px 0 5px;
+      border-color: $primary300 transparent transparent transparent;
+    }
+  }
+  form {}
+  input {
+    @extend .bdc-grey300;
+    @extend .fntsz300;
+    @extend .pad5px !optional;
+    @extend .bdrds4;
+    @extend .bw100;
+    &.full {
+      @extend .w100;
+      @extend .db;
+    }
   }
 }

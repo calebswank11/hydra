@@ -1,0 +1,73 @@
+$ltGrey : #d8d8d8;
+$primary : rgb(17, 39, 78);
+$secondary: #4c1224;
+$primary900: lighten($primary, 100);
+$primary800: lighten($primary, 90);
+$primary700: lighten($primary, 80);
+$primary600: lighten($primary, 70);
+$primary500: lighten($primary, 60);
+$primary400: lighten($primary, 50);
+$primary300: lighten($primary, 40);
+$primary200: lighten($primary, 30);
+$primary100: lighten($primary, 20);
+$primary000: lighten($primary, 10);
+$secondary900: lighten($secondary, 100);
+$secondary800: lighten($secondary, 90);
+$secondary700: lighten($secondary, 80);
+$secondary600: lighten($secondary, 70);
+$secondary500: lighten($secondary, 60);
+$secondary400: lighten($secondary, 50);
+$secondary300: lighten($secondary, 40);
+$secondary200: lighten($secondary, 30);
+$secondary100: lighten($secondary, 20);
+$secondary000: lighten($secondary, 10);
+$green400: #1ad41a;
+$white: #ffffff;
+$black : #1B1B1B;
+$grey900 : lighten($black, 90);
+$grey800 : lighten($black, 80);
+$grey700 : lighten($black, 70);
+$grey600 : lighten($black, 60);
+$grey500 : lighten($black, 50);
+$grey400 : lighten($black, 40);
+$grey300 : lighten($black, 30);
+$grey200 : lighten($black, 20);
+$grey100 : lighten($black, 10);
+
+$colorArray: (
+  ("ltGrey", $ltGrey),
+  ("primary", $primary),
+  ("primary900", $primary900),
+  ("primary800", $primary800),
+  ("primary700", $primary700),
+  ("primary600", $primary600),
+  ("primary500", $primary500),
+  ("primary400", $primary400),
+  ("primary300", $primary300),
+  ("primary200", $primary200),
+  ("primary100", $primary100),
+  ("primary000", $primary000),
+  ("secondary", $secondary),
+  ("secondary900", $secondary900),
+  ("secondary800", $secondary800),
+  ("secondary700", $secondary700),
+  ("secondary600", $secondary600),
+  ("secondary500", $secondary500),
+  ("secondary400", $secondary400),
+  ("secondary300", $secondary300),
+  ("secondary200", $secondary200),
+  ("secondary100", $secondary100),
+  ("secondary000", $secondary000),
+  ("green400", $green400),
+  ("white", $white),
+  ("black", $black),
+  ("grey900", $grey900),
+  ("grey800", $grey800),
+  ("grey700", $grey700),
+  ("grey600", $grey600),
+  ("grey500", $grey500),
+  ("grey400", $grey400),
+  ("grey300", $grey300),
+  ("grey200", $grey200),
+  ("grey100", $grey100)
+);

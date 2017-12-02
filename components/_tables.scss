@@ -1,79 +1,274 @@
-table {
+@import "../functions/functions.scss";
+@mixin table {
+  @extend .bw100;
+  @extend .border-solid;
+  @extend .bdc-secondary500;
+  @extend .bxshVert2;
+}
+@mixin tableHeader {
+  @extend .lh300;
+  @extend .pad5px;
+  @extend .color-white;
+  @extend .fw100;
+}
+@mixin tableBody {
+  @extend .pad5px;
+  @extend .bw100;
+  @extend .border-solid;
+  @extend .bdc-secondary500;
+  @extend .lh300;
+  &:nth-child(2n) {
+    @extend .bgc-secondary700;
+  }
+}
+@mixin tableFooter {
+  @extend .pad100;
+  @extend .tac;
+}
+@mixin createTableSchemas($color, $type){
+  $schema : ();
+  @if $type == "light" {
+    $schema: 700;
+  } @elseif $type == 'dark' {
+    $schema: 200;
+  }
   thead {
-    @extend .bdc-blue300;
     tr {
-      @extend .bgc-blue100;
+      @if $type == 'light' {
+        @extend .bgc-#{$color}600;
+      } @elseif $type == 'dark'{
+        @extend .bgc-#{$color};
+      }
       th {
-        @extend .lh300;
-        @extend .pad5px;
-        @extend .color-white;
-        @extend .fw100;
+        @if $type == 'light' {
+          @extend .color-grey200;
+        } @elseif $type == 'dark'{
+          @extend .color-white;
+        }
       }
     }
   }
-  tbody {
-    tr {
-      &:nth-child(2n-1) {
-        background-color: $blue000;
-      }
+  tr {
+    @if $type == 'light' {
+      @extend .bgc-white;
+    } @elseif $type == 'dark'{
+      @extend .bgc-#{$color}400;
+    }
+    &:nth-of-type(2n) {
+      @extend .bgc-#{$color}#{$schema};
     }
   }
   td {
-  }
-  &.table {
-    th {
-      // @extend .posr;
-      // &::before {
-      //   @extend .before;
-      //   @extend .db;
-      //   @extend .posa;
-      //   @extend .transY;
-      //   @extend .r-100;
-      //   width: 0;
-      //   height: 0;
-      //   @extend .border-solid;
-      //   border-width: 10px 5px 0 5px;
-      //   border-color: $blue300 transparent transparent transparent;
-      // }
-    }
-  }
-}
-// datatables
-#dataTables_wrapper {
-  @extend .clearfix;
-}
-.dataTables_info {
-  @extend .fntsz100;
-  @extend .fl;
-  @extend .row;
-  @extend .mt100;
-}
-.dataTables_paginate {
-  @extend .fr;
-  @extend .row;
-  @extend .mt100;
-  & > a {
-    @extend .pad10px;
-    @extend .border-solid;
-    @extend .brw100;
-    @extend .bdc-grey200;
-    &:last-of-type {
-      border: none;
-    }
-  }
-  & > span a {
-    @extend .pad10px;
-    @extend .border-solid;
-    @extend .brw100;
-    @extend .bdc-grey200;
-    @include transition(transitionFunct(color));
-    &.current {
-      @extend .bgc-blue300;
+    @if $type == 'light' {
+      @extend .color-grey200;
+    } @elseif $type == 'dark'{
       @extend .color-white;
     }
-    &:hover {
-      @extend .bgc-blue100;
-      @extend .color-white;
+  }
+  tfoot {
+    tr {
+      @if $type == 'light' {
+        @extend .bgc-#{$color}600;
+      } @elseif $type == 'dark'{
+        @extend .bgc-#{$color};
+      }
+      th {
+        @if $type == 'light' {
+          @extend .color-grey200;
+        } @elseif $type == 'dark'{
+          @extend .color-white;
+        }
+      }
+    }
+  }
+}
+@mixin createTableSchemasFlex($color, $type){
+  $schema : ();
+  @if $type == "light" {
+    $schema: 700;
+  } @elseif $type == 'dark' {
+    $schema: 200;
+  }
+  .flex-table-header {
+    @if $type == 'light' {
+      @extend .bgc-#{$color}600;
+    } @elseif $type == 'dark'{
+      @extend .bgc-#{$color};
+    }
+    div {
+      @if $type == 'light' {
+        @extend .color-grey200;
+      } @elseif $type == 'dark'{
+        @extend .color-white;
+      }
+    }
+  }
+  .flex-table-body {
+  }
+  .flex-table-row {
+    @if $type == 'light' {
+      @extend .bgc-white;
+      @extend .bdc-#{$color}600;
+    } @elseif $type == 'dark'{
+      @extend .bgc-#{$color}400;
+      @extend .bdc-#{$color}100;
+    }
+    &:nth-of-type(2n) {
+      @extend .bgc-#{$color}#{$schema};
+    }
+  }
+  .flex-table-footer {
+    @if $type == 'light' {
+      @extend .bgc-#{$color}600;
+    } @elseif $type == 'dark'{
+      @extend .bgc-#{$color};
+    }
+    div {
+      @if $type == 'light' {
+        @extend .color-grey200;
+      } @elseif $type == 'dark'{
+        @extend .color-white;
+      }
+    }
+  }
+}
+@mixin TablesPartial {
+  table {
+    @include table;
+    &.full {
+      @extend .w100;
+    }
+    &.light {
+      @extend .bdc-primary700;
+      &.primary {
+        @include createTableSchemas("primary", "light");
+      }
+      &.secondary {
+        @include createTableSchemas("secondary", "light");
+      }
+    }
+    &.dark {
+      @extend .bdc-primary200;
+      &.primary {
+        @include createTableSchemas("primary", "dark");
+      }
+      &.secondary {
+        @include createTableSchemas("secondary", "dark");
+      }
+    }
+    thead {
+      @extend .bdc-secondary600;
+      tr {
+        @extend .bgc-secondary500;
+        th {
+          @include tableHeader;
+        }
+      }
+    }
+    tbody {
+      tr {
+        @include tableBody;
+      }
+    }
+    td {
+      @extend .pad5px;
+    }
+    tfoot {
+      th {
+        @include tableFooter;
+      }
+    }
+  }
+
+  .flex-table {
+    @extend .df;
+    @extend .fxdc;
+    @include table;
+    &.dark {
+      &.primary {
+        @include  createTableSchemasFlex("primary", "dark");
+      }
+      &.secondary {
+        @include  createTableSchemasFlex("secondary", "dark");
+      }
+    }
+    &.light {
+      &.primary {
+        @include  createTableSchemasFlex("primary", "light");
+      }
+      &.secondary {
+        @include  createTableSchemasFlex("secondary", "light");
+      }
+    }
+  }
+  .flex-table-header {
+    @extend .flex-full;
+    @extend .bgc-secondary500;
+    div {
+      @extend th;
+      // @extend .text200;
+      @extend .fw800;
+      @extend .tac;
+      @include tableHeader;
+    }
+  }
+  .flex-table-body {
+    @extend .w100;
+    & > div {
+      @extend .flex-full;
+      @extend .w100;
+      // @extend .text200;
+    }
+  }
+  .flex-table-row {
+    @include tableBody;
+  }
+  .flex-table-footer {
+    @extend .flex-full;
+    @include tableFooter;
+    & > div {
+      // @extend .text200;
+      @extend .fw600;
+      flex-grow: 1;
+    }
+  }
+  // datatables
+  #dataTables_wrapper {
+    @extend .clearfix;
+  }
+  .dataTables_info {
+    @extend .fntsz100;
+    @extend .fl;
+    @extend .row;
+    @extend .mt100;
+  }
+  .dataTables_paginate {
+    @extend .fr;
+    @extend .row;
+    @extend .mt100;
+    & > a {
+      @extend .pad10px;
+      @extend .border-solid;
+      @extend .brw100;
+      @extend .bdc-grey200;
+      &:last-of-type {
+        @extend .bdn;
+      }
+    }
+    & > span a {
+      @extend .pad10px;
+      @extend .border-solid;
+      @extend .brw100;
+      @extend .bdc-grey200;
+      // @include transition(transitionFunct(color));
+      &.current {
+        @extend .bgc-secondary300;
+        @extend .color-white;
+      }
+      &:hover {
+        @extend .bgc-secondary100;
+        @extend .color-white;
+      }
     }
   }
 }

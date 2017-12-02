@@ -1,9 +1,13 @@
+$fontFamily: 'Open Sans', arial, sans-srif;
+
 // defines every aspect of sizing outside columns
 $base: 1.1;
-$ratio: 1.23;
+$ratio: 1.35;
+$mobileRatio: 1.2;
 $breakpointMin: 480;
 $breakpointMax: 1200;
 $lineHeightRatio: 1.35;
+$mobileLineHeightRatio: 1.15;
 $unitOfMeasurement: 'rem';
 $min : $base/$ratio;
 // define columns and breakpoints
@@ -11,13 +15,18 @@ $sm-columns: 10;
 $md-columns: 14;
 $lg-columns: 12;
 $maxScreenSize: 1400;
-$minScreenSize: 768;
+$minScreenSize: 480;
 $units: '%'; // vw/ %/ px
 $amount: 100; //percent, px etc
 $colSm: 'col-sm-'; // define column names if you wish
 $colMd: 'col-md-';
 $colLg : 'col-lg-';
 $border-radius: 3px;
+
+// mobile nav _variables
+$mobileNavWidth: 35px;
+$mobileNavHeight: 35px;
+$mobileNavBarHeight: 4px;
 
 //define animations
 $fadeAnimation: fadeIn;
@@ -41,3 +50,30 @@ $buttonAnimationRepeat: none;
 $transitionDuration: 0.25s;
 $transitionAnimationDelay: 0.0s;
 $transitionTimingFunction: ease-in-out;
+
+// width array
+$array: $sm-columns, $md-columns, $lg-columns;
+
+// buttons
+$button1FontSize : 'fntsz200'; // put these all into an array and run for loop on them
+$button1PaddingLR : 'plr400';
+$button1PaddingTB : 'ptb200';
+$button1TextDecoration: 'tdn'; // text decoration none
+$button1Background: $primary400;
+$button1Color: $white;
+$button1Border: $primary300;
+// button 2
+$button2FontSize : 'fntsz200'; // put these all into an array and run for loop on them
+$button2PaddingLR : 'plr300';
+$button2PaddingTB : 'ptb100';
+$button2TextDecoration: 'tdn'; // text decoration none
+$button2Background: $white;
+$button2Color: $grey400;
+$button2Border: #{$grey500} 1px solid;
+$bdrdsArray: (
+  (bdtrrs, top, right),
+  (bdtlrs, top, left),
+  (bdbrrs, bottom, right),
+  (bdblrs, bottom, left)
+);
+$border-length: 1px;

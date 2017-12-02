@@ -1,39 +1,225 @@
-@import "imports.scss";
-@import "_hydra-normalize.scss";
-@import "_hydra-components.scss";
-// @import "project-hydra.scss";
+@import "utilities/_imports.scss";
 
-#content {
-  @extend .pad400;
-  @extend .posr;
-  @extend .vwl-200;
-  @extend .col-md-10;
-  @extend .col-md-push-3;
-}
-.error {
-  @extend .color-red400;
-  @extend .fntsz100;
-  @extend .pt100;
-  &.box {
-    @extend .mtb400;
-    @extend .pad300;
-    @extend .color-red400;
-    @extend .bw100;
-    @extend .bdc-red400;
-    @extend .border-solid;
-    @extend .bgc-red100;
-    @extend .fntsz200;
-    @extend .tac;
-  }
-}
+// Things to consider
+// custom components
+// custom widths
+// custom buttons/ ui pieces
+// run extends for certain classes of info
+  // - a whole bunch of classes arent going to do you much good whenever you need to change something
+// variables for custom work
+// keep it below 10kb--sssschhhhhhhhhh :|
+// import everything after finished
+// create comples styles based on these classes
 
-.row {
-  @extend .db;
-  @extend .ptb200;
-}
-.goHome {
-  @extend .posf;
-  @extend .col-md-3;
-  left: 0;
-  bottom: 0;
-}
+// items that you would want in your css
+
+// modular scale
+
+// $colors : ("black", "white", "green", "#e4e4e4");
+// @each $number in $colors {
+//   .#{$number} {
+//     color: #{$number};
+//   }
+// }
+// define main colors of your site
+// used for
+// background-color, color, borde-color, etc.
+// #{$colorArray(1(1))} {
+//   color: $colorArray(1(1))
+// }
+// default border radius
+// generic to all borders
+
+
+
+
+
+// buttons
+//   size
+//     lg
+//     md
+//     sm
+//   hover
+//   transition
+//   outline
+//   full
+//   color
+//   rounded
+//   full?
+// form options
+//   input
+//     outline
+//     error
+//   dropdown
+//     hover
+//     bg
+//   select vs checkbox?
+//     dropdown of checkboxes?
+//   checkbox
+//     as toggle?
+//   radio
+//     with text? (on-off)
+//   slider
+//   search
+//   textbox
+//   columnGroup
+//   alerts
+//     success
+//     error
+//     warning
+//     info
+//   table
+//     row disparity
+//     offset background?
+//     border
+//     anchor
+//       hover
+//       tooltip?
+//   per field
+//     success vs error?
+// breadcrumbs
+// anchor (extend button styles)
+//   hover
+//   tooltip?
+//     top
+//     bttom
+//     left
+//     right
+// pagination
+// icon
+//   circle
+//   square
+//   rounded
+// shape of div (extend to icon)
+//   sqaure
+//   rounded
+//   diamond
+//   triangle
+// datepicker
+// h'supports
+// shadow
+// opacity
+//   mac styles?
+//   windows styles?
+// list (input etc)
+//   card list
+//   shadow
+//   border
+//   col
+//   profile
+//     vert
+//     horz
+//   flex
+//   nav
+//   masonry
+//   simple
+//   icon-right
+//   icon-left
+//   tabs
+// video
+//   title
+//     top
+//     bottom
+//   playbutton
+//     extend shape.
+//     middle
+//     bottom
+//
+// images what though?
+//
+//
+//
+//
+// ----------
+// MOBILE
+//   nav
+// default variables
+
+
+// .colmf {
+// column-fill: ;
+// }
+// .colmg {
+// column-gap: ;
+// }
+// .colmr {
+// column-rule: ;
+// }
+// .colms {
+// column-span: ;
+// }
+// .colmw {
+// column-width: ;
+// }
+// col
+// colmc
+
+
+// // bubble menu sass
+// menu-bubble {
+//   .bubblemenuParent {
+//     position: fixed;
+//     bottom: 0;
+//     width: 100vw;
+//     height: 80px;
+//     pointer-events: none;
+//   }
+//   .bubblemenu {
+//     position: absolute;
+//     bottom: 1rem;
+//     right: 2rem;
+//     background-color: $primary;
+//     height: #{$width}px;
+//     width: #{$width}px;
+//     border-radius: 50%;
+//     pointer-events: all;
+//     ion-icon {
+//       font-size: 3rem;
+//       color: white;
+//       position: absolute;
+//       text-align: center;
+//       width: #{$width}px;
+//       line-height: calc(#{$width}px - 1px);
+//       font-weight: 100;
+//       z-index: 1000;
+//     }
+//     .bubbleMenuItem {
+//       height: #{$width}px;
+//       width: #{$width}px;
+//       position: absolute;
+//       bottom: 0;
+//       left: 50%;
+//       transition: transform .5s ease;
+//       z-index: -1;
+//       @for $i from 1 through $itemBase {
+//         $rotation: 90 / ($itemBase - 1);
+//         &:nth-of-type(#{$i}){
+//           $current : ($rotation * $i) - $rotation; // minus $rotation to account for initial val of 0
+//           transform: translateX(-50%)rotate(#{$current}deg)scale(0);
+//           transition-delay: calc(.1 * #{$i}s);
+//           &.active {
+//             transform: translateX(-50%)rotate(#{$current}deg)scale(1);
+//           }
+//           & > div {
+//             transform: rotate(#{$current * -1}deg);
+//           }
+//         }
+//       }
+//       $childWidth : #{$width} * .7;
+//       & > div {
+//         border-radius: 50%;
+//         width: #{$childWidth}px;
+//         height: #{$childWidth}px;
+//         background-color: $primary;
+//         left: calc((#{$width}px + 15px) * -1);
+//         top: calc((#{$width}px - #{$childWidth}px) / 2);
+//         position: absolute;
+//         ion-icon {
+//           width: #{$childWidth}px;
+//           line-height: calc(#{$childWidth}px - 1px);
+//           font-size: 2.25rem;
+//         }
+//       }
+//     }
+//   }
+// }

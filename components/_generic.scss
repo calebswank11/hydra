@@ -1,9 +1,84 @@
-* {
-  font-family: 'Open Sans', arial, sans-srif;
-  font-size: 98%;
-  @extend .bxszbb;
-  @extend .color-grey500;
-}
-a {
-  @extend .color-blue400;
+@mixin GenericPartial {
+  * {
+    font-family: $fontFamily;
+    font-size: 98%;
+    @extend .bxszbb;
+    // @extend .color-grey500;
+  }
+  body {
+    margin: 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    @extend .text200;
+  }
+  blockquote {
+    @extend .maw800;
+    @extend .ptb200;
+    @extend .btw300;
+    @extend .bbw300;
+    @extend .blw000;
+    @extend .brw000;
+    @extend .border-solid;
+    margin: 0 auto;
+    @extend .mt200;
+    @extend .mb200;
+    p {
+      @extend .text300;
+      @extend .db;
+      @extend .tac;
+      @extend .fw400;
+    }
+  }
+  cite {
+    @extend .db;
+    @extend .tac;
+    @extend .text200;
+    @extend .fw100;
+  }
+  a {
+    @extend .color-secondary400;
+  }
+  #content {
+    @extend .pad400;
+    @extend .posr;
+    @extend .vwl-200;
+    @extend .col-md-10;
+    @extend .col-md-push-3;
+  }
+  .error {
+    @extend .color-primary400;
+    @extend .fntsz100;
+    @extend .pt100;
+    &.box {
+      @extend .mtb400;
+      @extend .pad300;
+      @extend .color-primary400;
+      @extend .bw100;
+      @extend .bdc-primary400;
+      @extend .border-solid;
+      @extend .bgc-primary100;
+      @extend .fntsz200;
+      @extend .tac;
+    }
+  }
+
+  .row {
+    @extend .db;
+    @extend .ptb200;
+  }
+  .goHome {
+    @extend .posf;
+    @extend .col-md-3;
+    left: 0;
+    bottom: 0;
+  }
+  .flex-full {
+    @extend.df;
+    @extend .fxdr;
+    @extend .jcsa;
+  }
 }

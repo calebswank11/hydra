@@ -1,0 +1,45 @@
+// imports non repetitive scss
+@import '../variables/_colors.scss';
+@import '../variables/_variables.scss';
+@import '../functions/_functions.scss';
+@import './_modernize.scss';
+@import './_extends.scss';
+@import '../components/flexGrid.scss';
+@import '../components/grid.scss';
+@import '../components/_tables.scss';
+@import '../components/_forms.scss';
+@import '../components/_generic.scss';
+@import '../components/_navigation.scss';
+@import '../components/_buttons.scss';
+@import '../components/_lists.scss';
+
+// check what you want
+
+$includeTables: true;
+$includeForms: true;
+$includeGeneric: true;
+$includeNavigation: true;
+$includeButtons: true;
+$includeFlexGrid: true;
+
+$useFlex: true;
+$useColumns: true;
+
+@if $includeTables {
+  @include TablesPartial;
+}
+@if $includeForms {
+  @include FormsPartial;
+}
+@if $includeGeneric {
+  @include GenericPartial;
+}
+@if $includeNavigation {
+  @include NavigationPartial;
+}
+@if $includeButtons {
+  @include ButtonsPartial;
+}
+@if $includeFlexGrid {
+  @include FlexGridPartial;
+}

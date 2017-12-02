@@ -4,6 +4,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
 
+    <script src="main.js"></script>
+
     <link rel="stylesheet" href="hydra.nested.css">
 
     <script>
@@ -887,9 +889,60 @@
         <div id="top" class="page" role="document">
           <header role="banner">
             <h1>HTML5 Test Page</h1>
-            <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
+            <p>This is a test page filled with common HTML elements used to provide visual feedback whilst building CSS systems and frameworks.</p>
           </header>
+          <h1>Color Schematic</h1>
+          <div class="df jcsa vw100">
+            <div class="vh10 vw10 db bgc-primary"></div>
+            <div class="vh10 vw10 db bgc-primary100"></div>
+            <div class="vh10 vw10 db bgc-primary200"></div>
+            <div class="vh10 vw10 db bgc-primary300"></div>
+            <div class="vh10 vw10 db bgc-primary400"></div>
+            <div class="vh10 vw10 db bgc-primary500"></div>
+            <div class="vh10 vw10 db bgc-primary600"></div>
+            <div class="vh10 vw10 db bgc-primary700"></div>
+            <div class="vh10 vw10 db bgc-primary800"></div>
+            <div class="vh10 vw10 db bgc-primary900"></div>
+          </div>
+          <div class="df jcsa vw100">
+            <div class="vh10 vw10 db bgc-secondary"></div>
+            <div class="vh10 vw10 db bgc-secondary100"></div>
+            <div class="vh10 vw10 db bgc-secondary200"></div>
+            <div class="vh10 vw10 db bgc-secondary300"></div>
+            <div class="vh10 vw10 db bgc-secondary400"></div>
+            <div class="vh10 vw10 db bgc-secondary500"></div>
+            <div class="vh10 vw10 db bgc-secondary600"></div>
+            <div class="vh10 vw10 db bgc-secondary700"></div>
+            <div class="vh10 vw10 db bgc-secondary800"></div>
+            <div class="vh10 vw10 db bgc-secondary900"></div>
+          </div>
+          <h3>Choose Navigation Type</h3>
+          <ul class="flex-list modernize" id="chooseNavStyle">
+            <li>
+              <button type="button" class="button-1 animation">Standard</button>
+            </li>
+            <li>
+              <button type="button" class="button-1 animation">Flyout</button>
+            </li>
+            <li>
+              <button type="button" class="button-1 animation">Sticky Top</button>
+            </li>
+            <li>
+              <button type="button" class="button-1 animation">Sticky Right</button>
+            </li>
+            <li>
+              <button type="button" class="button-1 animation">Sticky Bottom</button>
+            </li>
+            <li>
+              <button type="button" class="button-1 animation">Sticky Left</button>
+            </li>
+          </ul>
           <nav role="navigation" class="standard col-sm-10 col-md-8 col-lg-4">
+            <div class="mobile-nav-icon" id="mobile-nav-icon">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
             <ul>
               <li>
                 <a href="#text">Text</a>
@@ -933,7 +986,7 @@
           </nav>
           <main role="main">
             <section id="text">
-              <header><h1>Text</h1></header>
+              <header><h1>Text Styles</h1></header>
               <article id="text__headings">
                 <header>
                   <h1>Headings</h1>
@@ -951,7 +1004,7 @@
               <article id="text__paragraphs">
                 <header><h1>Paragraphs</h1></header>
                 <div>
-                  <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+                  <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not requiprimary by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
                 </div>
                 <footer><p><a href="#top">[Top]</a></p></footer>
               </article>
@@ -974,13 +1027,13 @@
                     <dt>Definition List Title</dt>
                     <dd>This is a definition list division.</dd>
                   </dl>
-                  <h3>Ordered List</h3>
+                  <h3>Ordeprimary List</h3>
                   <ol>
                     <li>List Item 1</li>
                     <li>List Item 2</li>
                     <li>List Item 3</li>
                   </ol>
-                  <h3>Unordered List</h3>
+                  <h3>Unordeprimary List</h3>
                   <ul>
                     <li>List Item 1</li>
                     <li>List Item 2</li>
@@ -1049,6 +1102,267 @@
                     </tr>
                   </tbody>
                 </table>
+                <table class="secondary light">
+                  <caption>Table Caption</caption>
+                  <thead>
+                    <tr>
+                      <th>Table Heading 1</th>
+                      <th>Table Heading 2</th>
+                      <th>Table Heading 3</th>
+                      <th>Table Heading 4</th>
+                      <th>Table Heading 5</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Table Footer 1</th>
+                      <th>Table Footer 2</th>
+                      <th>Table Footer 3</th>
+                      <th>Table Footer 4</th>
+                      <th>Table Footer 5</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="primary dark">
+                  <caption>Table Caption</caption>
+                  <thead>
+                    <tr>
+                      <th>Table Heading 1</th>
+                      <th>Table Heading 2</th>
+                      <th>Table Heading 3</th>
+                      <th>Table Heading 4</th>
+                      <th>Table Heading 5</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Table Footer 1</th>
+                      <th>Table Footer 2</th>
+                      <th>Table Footer 3</th>
+                      <th>Table Footer 4</th>
+                      <th>Table Footer 5</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                    <tr>
+                      <td>Table Cell 1</td>
+                      <td>Table Cell 2</td>
+                      <td>Table Cell 3</td>
+                      <td>Table Cell 4</td>
+                      <td>Table Cell 5</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="flex-table">
+                  <div class="flex-table-header">
+                    <div>Table Heading 1</div>
+                    <div>Table Heading 2</div>
+                    <div>Table Heading 3</div>
+                    <div>Table Heading 4</div>
+                    <div>Table Heading 5</div>
+                  </div>
+                  <div class="flex-table-body">
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                  </div>
+                  <div class="flex-table-footer">
+                    <div>Table Footer 1</div>
+                    <div>Table Footer 2</div>
+                    <div>Table Footer 3</div>
+                    <div>Table Footer 4</div>
+                    <div>Table Footer 5</div>
+                  </div>
+                </div>
+                <div class="flex-table primary dark">
+                  <div class="flex-table-header">
+                    <div>Table Heading 1</div>
+                    <div>Table Heading 2</div>
+                    <div>Table Heading 3</div>
+                    <div>Table Heading 4</div>
+                    <div>Table Heading 5</div>
+                  </div>
+                  <div class="flex-table-body">
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                  </div>
+                  <div class="flex-table-footer">
+                    <div>Table Footer 1</div>
+                    <div>Table Footer 2</div>
+                    <div>Table Footer 3</div>
+                    <div>Table Footer 4</div>
+                    <div>Table Footer 5</div>
+                  </div>
+                </div>
+                <div class="flex-table secondary light">
+                  <div class="flex-table-header">
+                    <div>Table Heading 1</div>
+                    <div>Table Heading 2</div>
+                    <div>Table Heading 3</div>
+                    <div>Table Heading 4</div>
+                    <div>Table Heading 5</div>
+                  </div>
+                  <div class="flex-table-body">
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                    <div class="flex-table-row">
+                      <div>Table Cell 1</div>
+                      <div>Table Cell 2</div>
+                      <div>Table Cell 3</div>
+                      <div>Table Cell 4</div>
+                      <div>Table Cell 5</div>
+                    </div>
+                  </div>
+                  <div class="flex-table-footer">
+                    <div>Table Footer 1</div>
+                    <div>Table Footer 2</div>
+                    <div>Table Footer 3</div>
+                    <div>Table Footer 4</div>
+                    <div>Table Footer 5</div>
+                  </div>
+                </div>
                 <footer><p><a href="#top">[Top]</a></p></footer>
               </article>
               <article id="text__code">
@@ -1076,7 +1390,7 @@
                   <p><em>This text has added emphasis.</em></p>
                   <p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
                   <p>The <i>i element</i> is text that is offset from the normal text.</p>
-                  <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.</p>
+                  <p>The <u>u element</u> is text with an unarticulated, though explicitly rendeprimary, non-textual annotation.</p>
                   <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
                   <p><s>This text has a strikethrough</s>.</p>
                   <p>Superscript<sup>®</sup>.</p>

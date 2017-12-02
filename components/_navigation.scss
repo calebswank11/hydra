@@ -1,26 +1,124 @@
-nav {
-  div {
+@mixin NavigationPartial {
+  nav {
+    div {
+      @extend .db;
+      @extend .w100;
+    }
+    a, span {
+      @extend .db;
+      @extend .color-secondary400;
+      @extend .tdn;
+      @extend .fntsz100;
+      @extend .fw600;
+      @extend .ttu;
+      @extend .border-solid;
+      @extend .bbw100;
+      @extend .btw000;
+      @extend .blw000;
+      @extend .brw000;
+      @extend .bdc-grey200;
+      @extend .pad100;
+      transition: background-color .5s ease, color .5s ease;
+    }
+    a:hover {
+      @extend .bgc-grey200;
+      @extend .color-secondary300;
+    }
+    span {
+      @extend .color-grey400;
+    }
+    &.testing123 {
+      display: none !important;
+    }
+    ul {
+      li {
+        @extend .lstn;
+        & > ul {
+          @extend .dn;
+        }
+        &:hover {
+          & > ul {
+            @extend .db;
+          }
+        }
+      }
+    }
+    //navigation types
+    &.standard {
+      background-color: $white;
+      ul {
+        @extend .pad0px;
+      }
+      a {
+        background-color: $white;
+        @extend .color-secondary400;
+        &:hover {
+          @extend .bgc-grey200;
+          @extend .color-secondary300;
+        }
+      }
+      & > ul {
+        @extend .df;
+        @extend .ais;
+        @extend .jcsa;
+        @extend .posr;
+        & > li {
+          @extend .fxg100;
+          @extend .posr;
+          @extend .p0;
+          & > ul {
+            @extend .zi100;
+            @extend .posa;
+            @extend .transX;
+            @extend .t-100;
+            @extend .w100;
+            @extend .bxshVert2;
+            & li {
+              @extend .w100;
+              @extend .p0;
+            }
+          }
+        }
+      }
+    }
+    &.flyOut {}
+    &.sticky {
+      &.left {}
+      &.right {}
+      &.top {}
+      &.bottom {}
+    }
+  }
+  .mobile-nav-icon {
+    // display: none;
+    // @extend .dn;
     @extend .db;
-    @extend .w100;
-  }
-  a, span {
-    @extend .db;
-    @extend .color-blue400;
-    @extend .tdn;
-    @extend .fntsz100;
-    @extend .fw600;
-    @extend .ttu;
-    @extend .border-solid;
-    @extend .bbw100;
-    @extend .bdc-grey200;
-    @extend .pad100;
-    transition: background-color .5s ease, color .5s ease;
-  }
-  a:hover {
-    @extend .bgc-grey200;
-    @extend .color-blue300;
-  }
-  span {
-    @extend .color-grey400;
+    height: $mobileNavHeight;
+    width: $mobileNavWidth;
+    @extend .posf;
+    @extend .cursorP;
+    top: 1rem;
+    right: 1rem;
+    & > div {
+      height: $mobileNavBarHeight;
+      @extend .w100;
+      @extend .dib;
+      @extend .bgc-primary;
+      @extend .posa;
+      &:nth-of-type(1) {
+        @extend .t-00;
+        @extend .transX;
+      }
+      &:nth-of-type(2) {
+        @extend .trans;
+      }
+      &:nth-of-type(3) {
+        top: calc(100% - #{$mobileNavBarHeight});
+        @extend .transX;
+      }
+    }
+    // @media screen and (max-width:#{$minScreenSize}px) {
+    //   display: block;
+    // }
   }
 }
