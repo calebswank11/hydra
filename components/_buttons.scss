@@ -1,27 +1,29 @@
 @mixin ButtonsPartial {
-  $buttonTwoArray : (
-    ($button2FontSize, 'font-size'),
-    ($button2TextDecoration, 'text-decoration'),
-    ($button2PaddingLR, 'padding'),
-    ($button2PaddingTB, 'padding'),
-    ($button2Background, 'background'),
-    ($button2Color, 'color'),
-    ($button2Border, 'border')
+  $buttonTwoArray: (
+     ($button2FontSize, "font-size"),
+     ($button2TextDecoration, "text-decoration"),
+     ($button2PaddingLR, "padding"),
+     ($button2PaddingTB, "padding"),
+     ($button2Background, "background"),
+     ($button2Color, "color"),
+     ($button2Border, "border")
   );
-  $buttonOneArray : (
-    ($button1FontSize, 'font-size'),
-    ($button1TextDecoration, 'text-decoration'),
-    ($button1PaddingLR, 'padding'),
-    ($button1PaddingTB, 'padding'),
-    ($button1Background, 'background'),
-    ($button1Color, 'color'),
-    ($button1Border, 'border')
+  $buttonOneArray: (
+     ($button1FontSize, "font-size"),
+     ($button1TextDecoration, "text-decoration"),
+     ($button1PaddingLR, "padding"),
+     ($button1PaddingTB, "padding"),
+     ($button1Background, "background"),
+     ($button1Color, "color"),
+     ($button1Border, "border")
   );
+
+  //testing commit
   // ln 1281
   .button-1 {
     @each $number in $buttonOneArray {
       @if type-of(nth($number, 1)) == string {
-        @extend .#{nth($number, 1)}
+        @extend .#{nth($number, 1)};
       } @else if type-of(nth($number, 1)) == bool {
         // check if bool is true or false
         @if type-of(nth($number, 1)) == true {
@@ -50,7 +52,9 @@
     &.animation {
       &:hover {
         &::before {
-          animation: $buttonAnimationOne $buttonAnimationDuration $buttonAnimationTimingFunction $buttonAnimationDelay $buttonAnimationRepeat;
+          animation: $buttonAnimationOne $buttonAnimationDuration
+            $buttonAnimationTimingFunction $buttonAnimationDelay
+            $buttonAnimationRepeat;
           opacity: 1;
         }
       }
@@ -63,7 +67,7 @@
   .button-2 {
     @each $number in $buttonTwoArray {
       @if type-of(nth($number, 1)) == string {
-        @extend .#{nth($number, 1)}
+        @extend .#{nth($number, 1)};
       } @else if type-of(nth($number, 1)) == bool {
         // check if bool is true or false
         @if type-of(nth($number, 1)) == true {
@@ -80,7 +84,9 @@
     @extend .cursorP;
     z-index: 1;
     &.animation {
-      animation: $buttonAnimationTwo $buttonAnimationDuration $buttonAnimationTimingFunction $buttonAnimationDelay $buttonAnimationRepeat;;
+      animation: $buttonAnimationTwo $buttonAnimationDuration
+        $buttonAnimationTimingFunction $buttonAnimationDelay
+        $buttonAnimationRepeat;
     }
     &.full {
       @extend .bdrds4;
