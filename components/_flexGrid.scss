@@ -7,6 +7,10 @@
           @extend .df;
           @include fg(1);
           @extend .p0;
+          button,
+          a {
+            @extend .w100;
+          }
         }
       }
     }

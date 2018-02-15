@@ -4,5 +4,8 @@
       @extend .pad0px;
       @extend .m0;
     }
+    p#{&} {
+      @extend .m0;
+    }
   }
 }

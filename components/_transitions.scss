@@ -1,0 +1,49 @@
+@import "../variables/colors.scss";
+@import "../variables/variables.scss";
+@import "../functions/functions.scss";
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes scaleOut {
+  0% {
+    transform: translate(-50%, -50%)scale(0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%)scale(1);
+  }
+}
+@mixin scaleY {
+  transition: height 0.5s ease;
+  &::before {
+    height: 0%;
+  }
+  &:hover::before {
+    height: 100%;
+  }
+}
+// @keyframes scaleY {
+//   0% {
+//     height: 0%;
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//     height: 100%
+//   }
+// }
+
+@mixin transition($type) {
+  transition: $type $transitionDuration $transitionTimingFunction;
+}
+
+.transition {
+  @include transition(transitionFunct(color));
+}

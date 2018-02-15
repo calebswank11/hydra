@@ -1,5 +1,14 @@
-@import '../variables/colors.scss';
-@import '../variables/variables.scss';
+// @import "../variables/colors.scss";
+// @import "../variables/variables.scss";
+// color function
+@function determinColor($color) {
+  @if (lightness($color) > 65) {
+    // @return darken($color, (100 - lightness($color)));
+    @return darken($color, 50);
+  } @else {
+    @return lighten($color, lightness($color));
+  }
+}
 // exponential function
 @function pow($number, $exponent) {
   $value: $min;
@@ -9,11 +18,10 @@
       $value: $value * $number;
     }
   }
-
   @return $value;
 }
 
-@function transitionFunct($node){
+@function transitionFunct($node) {
   // @if node  = array
   // @else node is single
   @return $node;
@@ -21,113 +29,20 @@
 @mixin fg($num) {
   flex-grow: $num;
 }
-// define colors
-@each $number in $colorArray {
-  .bgc-#{nth($number, 1)} {
-    background-color: transparentize(nth($number, 2), 0);
-  }
-  .bdc-#{nth($number, 1)} {
-    border-color: transparentize(nth($number, 2), 0);
-  }
-  .color-#{nth($number, 1)} {
-    color: transparentize(nth($number, 2), 0);
-  }
-}
 
-@each $number in $array {
-  @for $i from 1 through $number{
-    @media screen and (max-width:#{$minScreenSize}px) {
-      @if $number == $sm-columns {
-        .#{$colSm}#{$i} {
-          width: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-        }
-        .#{$colSm}push-#{$i}  {
-          left: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-        }
-        .#{$colSm}pull-#{$i}  {
-          right: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-        }
-      }
-    }
-    @if $number == $md-columns {
-      .#{$colMd}#{$i} {
-        width: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-      }
-      .#{$colMd}push-#{$i}  {
-        left: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-      }
-      .#{$colMd}pull-#{$i}  {
-        right: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-      }
-    }
-    @media screen and (min-width:#{$maxScreenSize}px) {
-      @if $number == $lg-columns {
-        .#{$colLg}#{$i} {
-          width: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-        }
-        .#{$colLg}push-#{$i}  {
-          left: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-        }
-        .#{$colLg}pull-#{$i}  {
-          right: calc((#{$amount}#{$units} / #{$number}) * #{$i});
-        }
-      }
-    }
-  }
+@function screenQueryMax($x) {
+  @return 'screen and (max-width: #{$x}) ';
 }
-@each $number in $bdrdsArray {
-  .#{nth($number, 1)} {
-    border-#{nth($number, 2)}-#{nth($number, 3)}-radius: $border-radius;
-  }
+@function screenQueryMin($x) {
+  @return 'screen and (max-width: #{$x}) ';
 }
+// @media #{screenQueryMin(1024px)} {
+// }
+// @media #{screenQueryMax(#{$minScreenSize}px)} {
+// }
 
 //////////////
 // $var : fntsz400;
 // .button {
 //   @extend .#{$var};
 // }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes scaleOut {
-  0% {
-    transform: translate(-50%, -50%)scale(0);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%)scale(1);
-  }
-}
-@mixin scaleY {
-  transition: height .5s ease;
-  &::before {
-    height: 0%;
-  }
-  &:hover::before {
-    height: 100%;
-  }
-}
-// @keyframes scaleY {
-//   0% {
-//     height: 0%;
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//     height: 100%
-//   }
-// }
-
-@mixin transition($type) {
-  transition: $type $transitionDuration $transitionTimingFunction;
-}
-.transition {
-  @include transition(transitionFunct(color));
-}

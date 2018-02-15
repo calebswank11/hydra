@@ -1,4 +1,62 @@
 @mixin GenericPartial {
+  // define colors
+  @each $number in $colorArray {
+    .bgc-#{nth($number, 1)} {
+      background-color: transparentize(nth($number, 2), 0);
+    }
+    .bdc-#{nth($number, 1)} {
+      border-color: transparentize(nth($number, 2), 0);
+    }
+    .color-#{nth($number, 1)} {
+      color: transparentize(nth($number, 2), 0);
+    }
+  }
+  @each $number in $array {
+    @for $i from 1 through $number {
+      @media #{screenQueryMax(#{$minScreenSize}px)} {
+        @if $number == $sm-columns {
+          .#{$colSm}#{$i} {
+            width: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+          }
+          .#{$colSm}push-#{$i} {
+            left: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+          }
+          .#{$colSm}pull-#{$i} {
+            right: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+          }
+        }
+      }
+      @if $number == $md-columns {
+        .#{$colMd}#{$i} {
+          width: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+        }
+        .#{$colMd}push-#{$i} {
+          left: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+        }
+        .#{$colMd}pull-#{$i} {
+          right: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+        }
+      }
+      @media #{screenQueryMin(#{$maxScreenSize}px)} {
+        @if $number == $lg-columns {
+          .#{$colLg}#{$i} {
+            width: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+          }
+          .#{$colLg}push-#{$i} {
+            left: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+          }
+          .#{$colLg}pull-#{$i} {
+            right: calc((#{$amount}#{$units} / #{$number}) * #{$i});
+          }
+        }
+      }
+    }
+  }
+  @each $number in $bdrdsArray {
+    .#{nth($number, 1)} {
+      border-#{nth($number, 2)}-#{nth($number, 3)}-radius: $border-radius;
+    }
+  }
   * {
     font-family: $fontFamily;
     font-size: 98%;
@@ -7,13 +65,22 @@
   }
   body {
     margin: 0;
+    color: $grey200;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0;
     padding: 0;
+    color: $grey100;
   }
   p {
-    @extend .text200;
+    @extend .text300;
+    @extend .m0;
+    @extend .ptb100;
   }
   blockquote {
     @extend .maw800;
@@ -40,7 +107,10 @@
     @extend .fw100;
   }
   a {
-    @extend .color-secondary400;
+    @extend .color-primary300;
+    &:hover {
+      @extend .color-secondary500;
+    }
   }
   #content {
     @extend .pad400;
@@ -65,7 +135,6 @@
       @extend .tac;
     }
   }
-
   .row {
     @extend .db;
     @extend .ptb200;
@@ -73,12 +142,40 @@
   .goHome {
     @extend .posf;
     @extend .col-md-3;
-    left: 0;
-    bottom: 0;
+    @extend .b-00;
+    @extend .l-00;
   }
   .flex-full {
     @extend.df;
     @extend .fxdr;
     @extend .jcsa;
+  }
+  pre {
+    @extend .text300;
+    font-family: monospace;
+  }
+  kbd {
+    font-family: monospace;
+  }
+  code {
+    @extend .bgc-secondary800;
+    @extend .bgc-secondary600;
+    @extend .pad100;
+    @extend .bdrds4;
+    font-family: monospace;
+  }
+  samp {
+    @extend .bgc-secondary300;
+    @extend .color-white;
+    @extend .pad100;
+    font-family: monospace;
+  }
+  sup,
+  sub,
+  small {
+    @extend .fntsz100;
+  }
+  abbr {
+    @extend .color-secondary200;
   }
 }

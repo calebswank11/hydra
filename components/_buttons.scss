@@ -1,3 +1,26 @@
+// buttons
+$button1FontSize: "fntsz200"; // put these all into an array and run for loop on them
+$button1PaddingLR: "plr400";
+$button1PaddingTB: "ptb200";
+$button1TextDecoration: "tdn"; // text decoration none
+$button1Background: $primary400;
+$button1Color: $white;
+$button1Border: $primary300;
+// button 2
+$button2FontSize: "fntsz200"; // put these all into an array and run for loop on them
+$button2PaddingLR: "plr300";
+$button2PaddingTB: "ptb100";
+$button2TextDecoration: "tdn"; // text decoration none
+$button2Background: $white;
+$button2Color: $grey400;
+$button2Border: #{$grey500} 1px solid;
+$bdrdsArray: (
+   (bdtrrs, top, right),
+   (bdtlrs, top, left),
+   (bdbrrs, bottom, right),
+   (bdblrs, bottom, left)
+);
+
 @mixin ButtonsPartial {
   $buttonTwoArray: (
      ($button2FontSize, "font-size"),

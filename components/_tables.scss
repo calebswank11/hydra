@@ -2,8 +2,9 @@
 @mixin table {
   @extend .bw100;
   @extend .border-solid;
-  @extend .bdc-secondary500;
+  // @extend .bdc-secondary500;
   @extend .bxshVert2;
+  @extend .mtb300;
 }
 @mixin tableHeader {
   @extend .lh300;
@@ -25,33 +26,45 @@
   @extend .pad100;
   @extend .tac;
 }
-@mixin createTableSchemas($color, $type){
-  $schema : ();
+@mixin createTableSchemas($color, $type) {
+  $schema: ();
   @if $type == "light" {
     $schema: 700;
-  } @elseif $type == 'dark' {
+    @extend .bdc-#{$color}500;
+  }
+  @elseif $type == "dark" {
     $schema: 200;
+    @extend .bdc-#{$color}200;
+  }
+  caption {
+    @extend .pad100;
+    @extend .text100;
+    @extend .tall;
+    @extend .fsi;
   }
   thead {
     tr {
-      @if $type == 'light' {
+      @if $type == "light" {
         @extend .bgc-#{$color}600;
-      } @elseif $type == 'dark'{
+      }
+      @elseif $type == "dark" {
         @extend .bgc-#{$color};
       }
       th {
-        @if $type == 'light' {
+        @if $type == "light" {
           @extend .color-grey200;
-        } @elseif $type == 'dark'{
+        }
+        @elseif $type == "dark" {
           @extend .color-white;
         }
       }
     }
   }
   tr {
-    @if $type == 'light' {
+    @if $type == "light" {
       @extend .bgc-white;
-    } @elseif $type == 'dark'{
+    }
+    @elseif $type == "dark" {
       @extend .bgc-#{$color}400;
     }
     &:nth-of-type(2n) {
@@ -59,46 +72,54 @@
     }
   }
   td {
-    @if $type == 'light' {
+    @if $type == "light" {
       @extend .color-grey200;
-    } @elseif $type == 'dark'{
+    }
+    @elseif $type == "dark" {
       @extend .color-white;
     }
   }
   tfoot {
     tr {
-      @if $type == 'light' {
+      @if $type == "light" {
         @extend .bgc-#{$color}600;
-      } @elseif $type == 'dark'{
+      }
+      @elseif $type == "dark" {
         @extend .bgc-#{$color};
       }
       th {
-        @if $type == 'light' {
+        @if $type == "light" {
           @extend .color-grey200;
-        } @elseif $type == 'dark'{
+        }
+        @elseif $type == "dark" {
           @extend .color-white;
         }
       }
     }
   }
 }
-@mixin createTableSchemasFlex($color, $type){
-  $schema : ();
+@mixin createTableSchemasFlex($color, $type) {
+  $schema: ();
   @if $type == "light" {
     $schema: 700;
-  } @elseif $type == 'dark' {
+    @extend .bdc-#{$color}500;
+  }
+  @elseif $type == "dark" {
     $schema: 200;
+    @extend .bdc-#{$color}100;
   }
   .flex-table-header {
-    @if $type == 'light' {
+    @if $type == "light" {
       @extend .bgc-#{$color}600;
-    } @elseif $type == 'dark'{
+    }
+    @elseif $type == "dark" {
       @extend .bgc-#{$color};
     }
     div {
-      @if $type == 'light' {
+      @if $type == "light" {
         @extend .color-grey200;
-      } @elseif $type == 'dark'{
+      }
+      @elseif $type == "dark" {
         @extend .color-white;
       }
     }
@@ -106,10 +127,11 @@
   .flex-table-body {
   }
   .flex-table-row {
-    @if $type == 'light' {
+    @if $type == "light" {
       @extend .bgc-white;
       @extend .bdc-#{$color}600;
-    } @elseif $type == 'dark'{
+    }
+    @elseif $type == "dark" {
       @extend .bgc-#{$color}400;
       @extend .bdc-#{$color}100;
     }
@@ -118,15 +140,17 @@
     }
   }
   .flex-table-footer {
-    @if $type == 'light' {
+    @if $type == "light" {
       @extend .bgc-#{$color}600;
-    } @elseif $type == 'dark'{
+    }
+    @elseif $type == "dark" {
       @extend .bgc-#{$color};
     }
     div {
-      @if $type == 'light' {
+      @if $type == "light" {
         @extend .color-grey200;
-      } @elseif $type == 'dark'{
+      }
+      @elseif $type == "dark" {
         @extend .color-white;
       }
     }
@@ -186,18 +210,18 @@
     @include table;
     &.dark {
       &.primary {
-        @include  createTableSchemasFlex("primary", "dark");
+        @include createTableSchemasFlex("primary", "dark");
       }
       &.secondary {
-        @include  createTableSchemasFlex("secondary", "dark");
+        @include createTableSchemasFlex("secondary", "dark");
       }
     }
     &.light {
       &.primary {
-        @include  createTableSchemasFlex("primary", "light");
+        @include createTableSchemasFlex("primary", "light");
       }
       &.secondary {
-        @include  createTableSchemasFlex("secondary", "light");
+        @include createTableSchemasFlex("secondary", "light");
       }
     }
   }
