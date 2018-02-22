@@ -5,17 +5,6 @@ $primary: determinColor(rgb(173, 220, 202));
 // $secondary: #4c1224;
 $secondary: determinColor(rgb(254, 210, 183));
 
-@function getColorVal($color, $exp) {
-  $percent: (100 - lightness($primary)) / 10;
-  @return lighten($color, $percent * $exp);
-}
-
-// @for $i from 0 to 9 {
-//   $percent: (100 - lightness($primary)) / 10;
-//   $primary#{$i}00: lighten($primary, $precent * $i);
-//   $secondary#{$i}00: lighten($secondary, $precent * $i);
-// }
-
 $primary900: getColorVal($primary, 10);
 $primary800: getColorVal($primary, 9);
 $primary700: getColorVal($primary, 8);

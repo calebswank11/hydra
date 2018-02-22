@@ -1,10 +1,15 @@
+@import "../variables/variables.scss";
+@import "../variables/colors.scss";
+@import "../functions/functions.scss";
+
 @mixin NavigationPartial {
   nav {
     div {
       @extend .db;
       @extend .w100;
     }
-    a, span {
+    a,
+    span {
       @extend .db;
       @extend .color-secondary400;
       @extend .tdn;
@@ -18,7 +23,7 @@
       @extend .brw000;
       @extend .bdc-grey200;
       @extend .pad100;
-      transition: background-color .5s ease, color .5s ease;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
     a:hover {
       @extend .bgc-grey200;
@@ -33,12 +38,21 @@
     ul {
       li {
         @extend .lstn;
+        @extend .ovh;
         & > ul {
-          @extend .dn;
+          @extend .h-0px;
+          transition: height 0.25s ease;
         }
+        // > a {
+        //   &:hover {
+        //     ~ ul {
+        //       height: auto;
+        //     }
+        //   }
+        // }
         &:hover {
           & > ul {
-            @extend .db;
+            height: auto;
           }
         }
       }
@@ -53,7 +67,7 @@
         background-color: $white;
         @extend .color-secondary400;
         &:hover {
-          @extend .bgc-grey200;
+          @extend .bgc-primary300;
           @extend .color-secondary300;
         }
       }
@@ -81,22 +95,154 @@
         }
       }
     }
-    &.flyOut {}
+    &.flyOut {
+      .mobile-nav-icon,
+      .mobile-nav-click {
+        @extend .db;
+      }
+      .mobile-nav-click:checked {
+        & ~ .mobile-nav-icon {
+          div {
+            &:nth-of-type(1) {
+              transform: translateX(-50%)rotate(-45deg);
+              top: 50%;
+            }
+            &:nth-of-type(2) {
+              @extend .h-0px;
+            }
+            &:nth-of-type(3) {
+              transform: translateX(-50%)rotate(45deg);
+              top: 50%;
+            }
+          }
+          & ~ ul {
+            @extend .l-00;
+          }
+        }
+      }
+      & > ul {
+        left: -40vw;
+        transition: left 0.5s ease;
+        @extend .posf;
+        @extend .vh100;
+        @extend .vw20;
+        @extend .t-00;
+        @extend .zi1;
+        @extend .bxsh3;
+        @extend .bgc-primary400;
+        &.left {
+          @extend .l-00;
+        }
+        &.right {
+          @extend .r-00;
+        }
+        &.primary {
+          @extend .bgc-primary400;
+        }
+        &.secondary {
+          @extend .bgc-secondary400;
+        }
+        li {
+          @extend .p0;
+          a {
+            @extend .color-white;
+            @extend .bdc-primary300;
+          }
+        }
+        & > li {
+          a {
+            @extend .zi1;
+            @extend .posr;
+          }
+          &:hover {
+            & > a {
+              @extend .bgc-primary200;
+              @extend .bxshVert1;
+            }
+          }
+          li {
+            &:hover {
+              & > a {
+                @extend .bgc-primary300;
+              }
+            }
+          }
+        }
+      }
+      ul {
+        @extend .modernize;
+      }
+    }
     &.sticky {
-      &.left {}
-      &.right {}
-      &.top {}
-      &.bottom {}
+      @extend .posf;
+      @extend .bgc-white;
+      & > ul {
+        @extend .df;
+        @extend .modernize;
+      }
+      &.left {
+        @extend .l-00;
+        @extend .t-00;
+        & > ul {
+          @extend .fxdc;
+          @extend .vw20;
+        }
+      }
+      &.right {
+        @extend .r-00;
+        @extend .t-00;
+        & > ul {
+          @extend .fxdc;
+          @extend .vw20;
+        }
+      }
+      &.top {
+        @extend .t-00;
+        & > ul {
+          @extend .fxdr;
+          @extend .vw100;
+          @extend .jcsb;
+          & > li {
+            @include fg(1);
+          }
+        }
+      }
+      &.bottom {
+        @extend .b-00;
+        & > ul {
+          @extend .fxdr;
+          @extend .vw100;
+          @extend .jcsb;
+          & > li {
+            @include fg(1);
+          }
+        }
+      }
     }
   }
-  .mobile-nav-icon {
-    // display: none;
-    // @extend .dn;
-    @extend .db;
+  .mobile-nav-click {
+    @extend .dn;
     height: $mobileNavHeight;
     width: $mobileNavWidth;
     @extend .posf;
     @extend .cursorP;
+    top: 1rem;
+    right: 1rem;
+    @extend .zi2;
+    @extend .cursorP;
+    appearance: none;
+    -webkit-appearance: none;
+    @extend .m0;
+    &:focus {
+      @extend .oln;
+    }
+  }
+  .mobile-nav-icon {
+    @extend .dn;
+    @extend .zi1;
+    height: $mobileNavHeight;
+    width: $mobileNavWidth;
+    @extend .posf;
     top: 1rem;
     right: 1rem;
     & > div {
@@ -108,13 +254,16 @@
       &:nth-of-type(1) {
         @extend .t-00;
         @extend .transX;
+        transition: transitionFunct(all);
       }
       &:nth-of-type(2) {
         @extend .trans;
+        transition: transitionFunct(height);
       }
       &:nth-of-type(3) {
         top: calc(100% - #{$mobileNavBarHeight});
         @extend .transX;
+        transition: transitionFunct(all);
       }
     }
     // @media screen and (max-width:#{$minScreenSize}px) {

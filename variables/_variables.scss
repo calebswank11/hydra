@@ -14,6 +14,7 @@ $min: $base/$ratio;
 $sm-columns: 10;
 $md-columns: 14;
 $lg-columns: 12;
+$array: $sm-columns, $md-columns, $lg-columns;
 $maxScreenSize: 1400;
 $minScreenSize: 480;
 $units: "%"; // vw/ %/ px
@@ -46,12 +47,9 @@ $buttonAnimationDuration: 0.25s;
 $buttonAnimationDelay: 0s;
 $buttonAnimationTimingFunction: ease-in-out;
 $buttonAnimationRepeat: none;
-
+// define transitions
 $transitionDuration: 0.25s;
 $transitionAnimationDelay: 0s;
 $transitionTimingFunction: ease-in-out;
-
-// width array
-$array: $sm-columns, $md-columns, $lg-columns;
 
 $border-length: 1px;

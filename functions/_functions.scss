@@ -9,6 +9,11 @@
     @return lighten($color, lightness($color));
   }
 }
+
+@function getColorVal($color, $exp) {
+  $percent: (100 - lightness($primary)) / 10;
+  @return lighten($color, $percent * $exp);
+}
 // exponential function
 @function pow($number, $exponent) {
   $value: $min;
@@ -22,14 +27,16 @@
 }
 
 @function transitionFunct($node) {
-  // @if node  = array
+  @if type-of($node) == list {
+    @return $node $transitionDuration $transitionTimingFunction;
+  } @else {
+    @return $node $transitionDuration $transitionTimingFunction;
+  }
   // @else node is single
-  @return $node;
 }
 @mixin fg($num) {
   flex-grow: $num;
 }
-
 @function screenQueryMax($x) {
   @return 'screen and (max-width: #{$x}) ';
 }

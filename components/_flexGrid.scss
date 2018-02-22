@@ -13,6 +13,18 @@
           }
         }
       }
+      div#{&} {
+        @extend .df;
+        * {
+          @include fg(1);
+        }
+        &.button-list {
+          & > button {
+            @extend .button-1;
+            @extend .m10px;
+          }
+        }
+      }
     }
   }
 }

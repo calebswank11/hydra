@@ -1,1649 +1,717 @@
 <html>
   <head>
-    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
-
     <script src="main.js"></script>
-
     <link rel="stylesheet" href="hydra.nested.css">
-
-    <script>
-///////////
-// stock ROI
-// var mul = 1.03;
-// starting val
-// var num = 3000;
-// for(var i = 0; i < 100; i++){
-//   num = (num * mul) - 14;
-//   console.log(num)
-//   i % 5 === 0 ? console.log('week ' + (i/5) + ' end amount - ' + num) : null;
-// }
-///////////
-
-//
-// function sortNumber(a,b) {
-//     return a - b;
-// }
-//
-// unsorted.sort(sortNumber);
-//
-// console.log(unsorted.join('\n'));
-
-// var s = 'saveChangesInTheEditor';
-// var arr = s.match(/[A-Z][a-z]+/g);
-// console.log(arr.length  + 1)
-// console.log(arr);
-
-///////////
-
-// var q = ['aaab', 'baa', 'aaa'];
-// var equality = [];
-//
-// for(var i = 0; i < q.length; i++){
-//   var qq = q[i].split('');
-//   // console.log((q[i].split('')).length);
-//   for(var l = 0; l < Math.floor((qq.length / 2)); l++){
-//     console.log(qq[l], qq[qq.length - (l + 1)], 'comparison letters', i, l);
-//     if(qq[l].toLowerCase != qq[qq.length - (l + 1)].toLowerCase()){
-//       equality.push([-1, i, l]);
-//     }
-//   }
-//   console.log(q[i])
-// }
-// console.log(equality)
-
-/////////////
-
-// var q = '12:45:54PM';
-// q = q.split(':');
-// var hours = parseInt(q[0]);
-// var mins = q[1];
-// var secs = (q[2]).substring(0, 2);
-// var test = (q[2]).substring(2, q[2].length);
-//
-// if(test === 'PM'){
-//   if(hours < 12) {
-//     hours = hours + 12;
-//   }
-// } else {
-//   if(hours === 12){
-//     hours = 0;
-//   }
-//   hours = `${hours}`;
-//   if(hours.length === 1){
-//     hours = `0${hours}`;
-//   }
-// }
-//
-// console.log(`${hours}:${mins}:${secs}`);
-
-/////////////////
-
-// var q = [ 1, 2, 3, 4, 5 ];
-//
-// q.sort();
-// var max = 0;
-// var min = 0;
-//
-// for(var i = 0; i < 4; i++){
-//   max += q[q.length - (i + 1)];
-//   min += q[i];
-// }
-// console.log(min, max)
-//////////////////
-
-//
-// var n = 5
-// var p = 4;
-// var median = Math.floor(n / 2);
-// var pages;
-//
-// if(p >= median){
-//   // start from the end
-//   console.log(p, median, 'start from end')
-//   console.log((p / 2) - 1)
-//   pages = Math.floor((p / 2) - 1);
-// } else {
-//   // start from beginning
-//   console.log(p, median, 'start from beginning')
-//   console.log(Math.floor(p / 2))
-//   pages = Math.floor(p / 2);
-// }
-//
-// console.log(pages)
-
-// now we can read/parse input
-//    console.log(input);
-//     var test = input.split(/\n/g);
-//     var newArr = [];
-//     var amount = test.shift();
-// //    console.log(test, amount)
-//     for(var i = 0; i < parseInt(amount); i++){
-// //        console.log(parseInt(test[i]));
-//         newArr.push(parseInt(test[i]))
-//         newArr.sort();
-//         var median = Math.floor(newArr.length / 2);
-//         var medianPlus = 0;
-//         var odd = Math.abs(i % 2) == 1;
-//         odd === true ? medianPlus = median + 1 : null;
-//         console.log(odd, median, newArr[median], newArr[medianPlus])
-//     }
-// console.log(newArr)
-
-////////////
-// var ar = [ 6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5 ];
-// var n = ar.length;
-// var sort = ar.sort();
-// console.log(sort)
-// var result = [];
-//
-// for(var i = 0; i < n; i++){
-//   console.log(ar[0], ar[1], ar.length, ar)
-//   if(ar[0] === ar[1] && ar[0] != undefined){
-//     result.push(true);
-//     ar.shift();
-//     ar.shift();
-//   } else {
-//     ar.shift()
-//   }
-// }
-// console.log(result)
-////////////////
-// var s = [10, 5, 20, 20, 4, 5, 2, 25, 1];
-// var s = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42];
-//
-// var high = s[0];
-// var low = s[0];
-// var th = [];
-// var tl = [];
-// for(var i = 0; i < s.length; i++){
-//   if(s[i] > high){
-//     th.push(s[i])
-//     high = s[i]
-//   }
-//   if(s[i] < low){
-//     tl.push(s[i])
-//     low = s[i]
-//   }
-// }
-// console.log(th.length, tl.length)
-</script>
-
-
-    <!-- <script>
-    var inp = `6 7
-1 2 3 9 10 12`;
-
-inp = inp.split(/\n/g);
-var data = inp.shift();
-var cookies = inp[0].split(" ");
-cookies.sort();
-var sweetness = cookies[0];
-var length = cookies.length;
-var total = 1;
-cookies.shift();
-data = data.split(" ");
-
-for (var i = 0; i < cookies.length; i++) {
-  if (parseInt(sweetness) >= parseInt(data[1])) {
-    cookies.shift();
-    cookies.shift();
-    console.log(total);
-    break;
-  } else {
-    var x = cookies[0];
-    var y = sweetness;
-    sweetness = 1 * x + 2 * y;
-    cookies.shift();
-    total++;
-  }
-}
-</script> -->
-
-<!--    <style>
-
-      * {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-      body {
-        background-color: #e0e0e0;
-      }
-      th, td {
-        position: relative;
-      }
-      .deleteMe {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        width: 15px;
-        height: 15px;
-        background-color: rgba(0, 0, 200, 0);
-        border: 0!important;
-        outline: 0!important;
-        cursor: pointer;
-      }
-      .deleteMe::before {
-        content: '';
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        top: 5px;
-        right: 5px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 200, 1);
-        z-index: 1;
-      }
-      /*th input, td input {
-        pointer-events: none;
-      }*/
-      #chooseRange {
-        width: 250px;
-        position: relative;
-        height: 20px;
-        border-radius: 50px;
-        margin-bottom: 1.5rem;
-        background: linear-gradient(to bottom, #d8d8d8 0%,#ffffff 20%,#e5e5e5 78%,#e5e5e5 78%);
-        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, .35), inset 0px 1px 8px rgba(0, 0, 0, .25);
-      }
-      #chooseRange::before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: calc(100% + 10px);
-        height: calc(100% + 10px);
-        z-index: -1;
-        left: 50%;
-        top: 50%;
-        border-radius: 50px;
-        transform: translate(-50%, -50%);
-        background: linear-gradient(to bottom, #cecece 0%,#d8d8d8 46%,#f1f1f1 100%);
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom-color: white;
-      }
-      #chooseRange > span {
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        background: linear-gradient(45deg, rgb(204, 204, 204) 0%,#e8e8e8 46%,#ffffff 77%);
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-      }
-      #chooseRange > span:first-of-type {
-        box-shadow: 0px 1px 4px rgba(0, 0, 0, .55), 0px 5px 6px rgba(0, 0, 0, .35), 5px 0px 2px rgba(255, 255, 255, 0.1), inset -3px 0 1px rgba(30, 131, 235, .2);
-      }
-      #chooseRange > span:last-of-type {
-        box-shadow: 0px 1px 4px rgba(0, 0, 0, .55), 0px 5px 6px rgba(0, 0, 0, .35), -5px 0px 2px rgba(255, 255, 255, 0.1), inset 3px 0 1px rgba(30, 131, 235, .2);
-      }
-      #chooseRange > div {
-        position: absolute;
-        height: 100%;
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-      }
-      #chooseRange > div::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: block;
-        top: 0;
-        left: 15px;
-        background: linear-gradient(to bottom, #0b4f94 0%,#2490ff 20%,#156dc7 78%,#0f63b9 78%);
-        box-shadow: inset 0px 1px 2px rgba(0, 0, 0, .35), inset 0px 1px 8px rgba(0, 0, 0, .25), 0 -1px 3px rgba(26, 120, 217, .85);
-      }
-      #chooseRange > span:focus {
-        outline: 0;
-      }
-      #chooseRange > span::before {
-        content: '';
-        display: block;
-        border-radius: 50%;
-        position: absolute;
-        width: calc(100% - 8px);
-        height: calc(100% - 8px);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: linear-gradient(0deg, #ffffff 0%,#e4e4e4 46%,#cacaca 100%);
-      }
-      .editModal {
-        position: fixed;
-        padding: 1.5rem;
-        height: 100vh;
-        width: 300px;
-        top: 0;
-        right: -310px;
-        background-color: #f1f1f1;
-        transition: right .5s ease;
-        z-index: 100;
-      }
-      .editModal.active {
-        right: 0;
-      }
-      .matrixVertexHeader {
-        background-color: white;
-        color: black;
-        transition: background-color .25s cubic-bezier(.16,.49,.43,.81), box-shadow .25s cubic-bezier(.16,.49,.43,.81);
-        box-shadow: 0 0 8px rgba(21, 109, 199, 0);
-      }
-      .matrixVertexHeader.updated {
-        background-color: rgba(21, 109, 199, .25);
-        box-shadow: 0 0 8px rgba(21, 109, 199, .25);
-        color: white;
-        outline: 0!important;
-      }
-      .matrixVertexHeader.updated input {
-        /*color: white;*/
-      }
-      .matrixVertexHeader input {
-        background-color: transparent;
-        border: none!important;
-      }
-    </style> -->
-
-    <!-- <script>
-      varinp = `{[()]}
-{[(])}
-{{[[(())]]}}`;
-inp = inp.split(/\n/g);
-var firstHalfArray = [];
-var result = true;
-
-for (var h = 0; h < inp.length; h++) {
-  var arr = inp[h].split("");
-  console.log(arr);
-
-  for (var i = 0; i < arr.length; i++) {
-    var lgth = firstHalfArray.length - 1;
-    switch (arr[i]) {
-      case "{":
-      case "[":
-      case "(":
-        firstHalfArray.push(arr[i]);
-        break;
-      case ")":
-        console.log("firing " + firstHalfArray[lgth] + " )");
-        firstHalfArray[lgth] === "(" ? firstHalfArray.pop() : (result = false);
-        break;
-      case "}":
-        console.log("firing " + firstHalfArray[lgth] + " }");
-        firstHalfArray[lgth] === "{" ? firstHalfArray.pop() : (result = false);
-        break;
-      case "]":
-        console.log("firing " + firstHalfArray[lgth] + " ]");
-        firstHalfArray[lgth] === "[" ? firstHalfArray.pop() : (result = false);
-        break;
-    }
-  }
-  firstHalfArray = [];
-  console.log(result);
-  result = true;
-}
-setTimeout(function() {
-  console.log(result);
-}, 1000);
-</script> -->
-    <script>
-//  var inp = `4
-// aba
-// baba
-// aba
-// xzxb
-// 3
-// aba
-// xzxb
-// ab`;
-//
-//   inp = inp.split(/\n/g);
-//   var lookInMe = [];
-//   var amount = inp.shift();
-//   var result = '';
-//
-//   for(var i = 0; i < amount; i++) {
-//     lookInMe.push(inp.shift());
-//   }
-//   inp.shift();
-//
-//   for(var i = 0; i < inp.length; i++) {
-//     var totalOccurances = 0;
-//     for(var j = 0; j < lookInMe.length; j++){
-//       inp[i] === lookInMe[j] ? totalOccurances++ : null;
-//     }
-//     result += `${totalOccurances}\n`;
-//   }
-//   console.log(result);
-
-// for(var i = 0; i < inp.length; i++){
-//   console.log(inp[i]);
-//   for(var j = 0; j < inp.length; j++){
-//     inp[i] === inp[j] ? console.log(true) : console.log(false);
-//   }
-// }
-</script>
-  <!-- </head>
-  <body> -->
-
-    <!-- <thead>
-
-    <div id="matrixContainer">
-      <table id="matrixParent">
-        <thead>
-          <th>&nbsp;</th>
-          <th class="matrixVertexHeader">
-            <input type="text" value="0 - 250"  readonly/>
-            <button class="deleteMe" ></button>
-          </th>
-          <th class="matrixVertexHeader">
-            <input type="text" value="251- 500"  readonly/>
-            <button class="deleteMe" ></button>
-          </th>
-          <th class="matrixVertexHeader">
-            <input type="text" value="501 - 750"  readonly/>
-            <button class="deleteMe" ></button>
-          </th>
-          <th class="matrixVertexHeader">
-            <input type="text" value="751 - 1000"  readonly/>
-            <button class="deleteMe" ></button>
-          </th>
-          <th class="matrixVertexHeader">
-            <input type="text" value="1000+"  readonly/>
-            <button class="deleteMe" ></button>
-          </th>
-          <th>
-            <button id="addPriorityCol">+ add</button>
-          </th>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="rowHead matrixVertexHeader">
-              <input type="text" value="1 - 6"  readonly/>
-              <button class="deleteMe" ></button>
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="rowHead matrixVertexHeader">
-              <input type="text" value="7 - 14"  readonly/>
-              <button class="deleteMe" ></button>
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="rowHead matrixVertexHeader">
-              <input type="text" value="15 - 30"  readonly/>
-              <button class="deleteMe" ></button>
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="rowHead matrixVertexHeader">
-              <input type="text" value="31 - 60"  readonly/>
-              <button class="deleteMe" ></button>
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="rowHead matrixVertexHeader">
-              <input type="text" value="60+"  readonly/>
-              <button class="deleteMe" ></button>
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>
-              <input type="number" value="" />
-            </td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td class="rowHead">
-              <button id="addPriorityRow">+ add</button>
-            </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-        </tbody>
-      </table>
-      <button id="saveTable">Save</button>
-      <button id="cancelTable">Cancel</button>
-
-      <div class="editModal">
-        <h2>Editing <span></span></h2>
-        <div id="chooseRange"></div>
-        <input type="text" id="amount" readonly>
-        <div id="choosePosition">
-          <p id="currentPosition">Current Position: <span></span></p>
-          <div>
-
-          </div>
-        </div>
-        <button class="saveEdit">Save</button>
-        <button class="cancelEdit">Cancel</button>
+  </head>
+  <body>
+    <div id="top" class="page" role="document">
+      <header role="banner">
+        <h1>HTML5 Test Page</h1>
+        <p>This is a test page filled with common HTML elements used to provide visual feedback whilst building CSS systems and frameworks.</p>
+      </header>
+      <h1>Color Schematic</h1>
+      <div class="df jcsa vw100">
+        <div class="vh10 vw10 db bgc-primary"></div>
+        <div class="vh10 vw10 db bgc-primary100"></div>
+        <div class="vh10 vw10 db bgc-primary200"></div>
+        <div class="vh10 vw10 db bgc-primary300"></div>
+        <div class="vh10 vw10 db bgc-primary400"></div>
+        <div class="vh10 vw10 db bgc-primary500"></div>
+        <div class="vh10 vw10 db bgc-primary600"></div>
+        <div class="vh10 vw10 db bgc-primary700"></div>
+        <div class="vh10 vw10 db bgc-primary800"></div>
+        <div class="vh10 vw10 db bgc-primary900"></div>
       </div>
-
-    </div>
-
-    <script>
-    $(document).ready(function() {
-  var request = [
-    {
-      updatePriorities: [
-        {
-          daysPastDueId: 15,
-          newPriority: 2,
-          amountRangeId: 5
-        },
-        {
-          daysPastDueId: 251,
-          newPriority: 3,
-          amountRangeId: 5
-        }
-      ]
-    }
-  ];
-  var reply = [
-    {
-      amountRangeList: [
-        {
-          id: 5,
-          beginAmount: 1,
-          endAmount: 10.99,
-          collectionCenterId: 1
-        },
-        {
-          id: 53,
-          beginAmount: 11,
-          endAmount: 49.99,
-          collectionCenterId: 1
-        },
-        {
-          id: 55,
-          beginAmount: 50,
-          endAmount: 249.99,
-          collectionCenterId: 1
-        },
-        {
-          id: 56,
-          beginAmount: 250,
-          endAmount: 499.99,
-          collectionCenterId: 1
-        }
-      ],
-      daysPastDue: [
-        {
-          id: 52,
-          beginDaysPastDue: 1,
-          endDaysPastDue: 7,
-          collectionCenterId: 1
-        },
-        {
-          id: 54,
-          beginDaysPastDue: 8,
-          endDaysPastDue: 15,
-          collectionCenterId: 1
-        },
-        {
-          id: 55,
-          beginDaysPastDue: 16,
-          endDaysPastDue: 30,
-          collectionCenterId: 1
-        },
-        {
-          id: 56,
-          beginDaysPastDue: 31,
-          endDaysPastDue: 45,
-          collectionCenterId: 1
-        },
-        {
-          id: 58,
-          beginDaysPastDue: 46,
-          endDaysPastDue: 90,
-          collectionCenterId: 1
-        }
-      ],
-      priorities: [
-        [null, 10, 8, 5, 1],
-        [null, null, null, 6, 1],
-        [null, null, null, null, null],
-        [null, null, null, null, null]
-      ]
-    }
-  ];
-
-  var alphabet = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z"
-  ];
-  var max = 1000;
-
-  var matrixParent = $("#matrixParent");
-  var insertRadio = '<input type="radio" name="position" />';
-  var insertTd = '<td><input type="number" value="-1" /></td>';
-  var insertTh =
-    '<th class="matrixVertexHeader"><input type="text" value="0 - 0"/><button class="deleteMe"></button></th>';
-  var insertTrHead =
-    '<td class="matrixVertexHeader"><input type="text" value="0 - 0"/><button class="deleteMe"></button></td>';
-  var editModal = $(".editModal");
-  var passInfo = [{}];
-
-  //assuming the chart is created prioor to this dynamically, give id's to each header and cell.
-  function vertexItemNames() {
-    matrixParent.find("th").each(function(n) {
-      $(this).attr("data-colhead", n);
-    });
-    matrixParent.find("tbody tr").each(function(n) {
-      $(this)
-        .find("td:first-of-type")
-        .attr("data-rowhead", alphabet[n]);
-      $(this)
-        .find("td")
-        .each(function(m) {
-          // console.log(n, m);
-          var letter = $(this)
-            .parent()
-            .find("td:first-of-type")
-            .attr("data-rowhead");
-          var number = matrixParent
-            .find("th:nth-child(" + m + ")")
-            .attr("data-colhead");
-          $(this)
-            .attr("data-nodeid", letter + number)
-            .find("input")
-            .val(n + m);
-        });
-    });
-  }
-  vertexItemNames();
-
-  $("#addPriorityCol").on("click", function() {
-    var currentColLength = matrixParent.find("th").length;
-    var currentRowLength = matrixParent.find("tr").length;
-    currentRowLength = currentRowLength - 2;
-    matrixParent.find("tr").each(function(n) {
-      if (currentRowLength >= n) {
-        $(insertTd).insertBefore($(this).find("td:last-of-type"));
-      }
-    });
-    $(insertTh).insertBefore($("#addPriorityCol").parent());
-    vertexItemNames();
-  });
-
-  $("#addPriorityRow").on("click", function() {
-    var currentColLength = matrixParent.find("th").length;
-    var currentRowLength = matrixParent.find("tbody tr").length;
-    var trObj = "<tr>" + insertTrHead;
-    var toEditObj = [];
-    currentColLength = currentColLength - 2;
-    // build Row
-    for (var i = 0; i < currentColLength; i++) {
-      trObj += insertTd;
-    }
-    // insert blank row at end
-    trObj += "<td>&nbsp;</td></tr>";
-    console.log(trObj);
-    $(trObj).insertBefore(matrixParent.find("tbody tr:last-of-type"));
-    vertexItemNames();
-  });
-
-  $(function() {
-    $("#chooseRange").slider({
-      range: true,
-      min: 0,
-      max: max,
-      values: [0, 0],
-      slide: function(event, ui) {
-        $("#amount").val(ui.values[0] + " - " + ui.values[1]);
-      }
-    });
-    $("#amount").val(
-      $("#chooseRange").slider("values", 0) +
-        " - " +
-        $("#chooseRange").slider("values", 1)
-    );
-  });
-
-  // $('body').on('click', '.matrixVertexHeader > .deleteMe', function(){
-
-  $(".saveEdit")
-    .add(".cancelEdit")
-    .on("click", function() {
-      editModal.removeClass("active");
-    });
-
-  $(".saveEdit").on("click", function() {
-    var nodeType = "";
-    passInfo["label"].toLowerCase() === "col"
-      ? (nodeType = "th")
-      : (nodeType = "td");
-    var changedVals = $("#chooseRange").slider("values");
-    // reorder table
-    reorderTable(passInfo["id"], $("#choosePosition input:checked").val());
-    //
-    passInfo["valueX"] = changedVals[0];
-    passInfo["valueY"] = changedVals[1];
-    passInfo["val"] = changedVals;
-    passInfo["id"] = $("#choosePosition input:checked").val();
-    $(
-      nodeType +
-        "[data-" +
-        passInfo["label"].toLowerCase() +
-        'head="' +
-        passInfo["id"] +
-        '"]'
-    )
-      .find("input")
-      .val(passInfo["valueX"] + " - " + passInfo["valueY"]);
-    $(
-      nodeType +
-        "[data-" +
-        passInfo["label"].toLowerCase() +
-        'head="' +
-        passInfo["id"] +
-        '"]'
-    )
-      .addClass("updated")
-      .find("input")
-      .val(passInfo["valueX"] + " - " + passInfo["valueY"]);
-    setTimeout(function() {
-      $(
-        nodeType +
-          "[data-" +
-          passInfo["label"].toLowerCase() +
-          'head="' +
-          passInfo["id"] +
-          '"]'
-      ).removeClass("updated");
-    }, 500);
-  });
-
-  function reorderTable(a, b) {
-    console.log(a, b);
-  }
-
-  $(document).on("click", ".matrixVertexHeader", function() {
-    var $el = $(this);
-    var val = $el.find("input").val();
-    val.length > 3 ? (val = val.split("-")) : null;
-
-    var id;
-    var label;
-    var type;
-    if ($el[0]["nodeName"].toLowerCase() === "th") {
-      id = $el.attr("data-colhead");
-      label = "Col";
-      type = "th";
-    } else if ($el[0]["nodeName"].toLowerCase() === "td") {
-      id = $el.attr("data-rowhead");
-      label = "Row";
-      type = "tr";
-    }
-    var valueX = val[0].trim().replace("+", "");
-    var valueY;
-    val.length > 1 ? (valueY = val[1].trim().replace("+", "")) : null;
-    // pass values to modal
-    passInfo["valueX"] = valueX;
-    passInfo["valueY"] = valueY;
-    passInfo["val"] = val;
-    passInfo["id"] = id;
-    passInfo["label"] = label;
-    passInfo["type"] = type;
-    console.log(passInfo);
-
-    // create positions for movement
-    $("#currentPosition > span").text(passInfo["id"]);
-    var posAvail = matrixParent.find(type).length - 2;
-    console.log(posAvail);
-    $("#choosePosition > div").empty();
-    for (var i = 0; i < posAvail; i++) {
-      $("#choosePosition > div").append(insertRadio);
-      console.log(i, passInfo["id"]);
-      $("#choosePosition > div input:last-of-type").prop("value", i + 1);
-      if (i + 1 === parseInt(passInfo["id"])) {
-        $("#choosePosition > div input:last-of-type").prop(
-          "checked",
-          "checked"
-        );
-      }
-    }
-    editModal.find("h2 > span").text(label + " " + id);
-    $("#amount").val(valueX + " - " + valueY);
-    $("#chooseRange").slider("values", [valueX, valueY]);
-    editModal.addClass("active");
-  });
-
-  // reposition if requested
-});
-</script> -->
-
-    <!-- <html lang="en">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HTML5 Test Page</title>
-      </head>
-      <body> -->
-        <div id="top" class="page" role="document">
-          <header role="banner">
-            <h1>HTML5 Test Page</h1>
-            <p>This is a test page filled with common HTML elements used to provide visual feedback whilst building CSS systems and frameworks.</p>
-          </header>
-          <h1>Color Schematic</h1>
-          <div class="df jcsa vw100">
-            <div class="vh10 vw10 db bgc-primary"></div>
-            <div class="vh10 vw10 db bgc-primary100"></div>
-            <div class="vh10 vw10 db bgc-primary200"></div>
-            <div class="vh10 vw10 db bgc-primary300"></div>
-            <div class="vh10 vw10 db bgc-primary400"></div>
-            <div class="vh10 vw10 db bgc-primary500"></div>
-            <div class="vh10 vw10 db bgc-primary600"></div>
-            <div class="vh10 vw10 db bgc-primary700"></div>
-            <div class="vh10 vw10 db bgc-primary800"></div>
-            <div class="vh10 vw10 db bgc-primary900"></div>
-          </div>
-          <div class="df jcsa vw100">
-            <div class="vh10 vw10 db bgc-secondary"></div>
-            <div class="vh10 vw10 db bgc-secondary100"></div>
-            <div class="vh10 vw10 db bgc-secondary200"></div>
-            <div class="vh10 vw10 db bgc-secondary300"></div>
-            <div class="vh10 vw10 db bgc-secondary400"></div>
-            <div class="vh10 vw10 db bgc-secondary500"></div>
-            <div class="vh10 vw10 db bgc-secondary600"></div>
-            <div class="vh10 vw10 db bgc-secondary700"></div>
-            <div class="vh10 vw10 db bgc-secondary800"></div>
-            <div class="vh10 vw10 db bgc-secondary900"></div>
-          </div>
-          <h3>Choose Navigation Type</h3>
-          <ul class="flex-list modernize" id="chooseNavStyle">
-            <li>
-              <button type="button" class="button-1 animation">Standard</button>
-            </li>
-            <li>
-              <button type="button" class="button-1 animation">Flyout</button>
-            </li>
-            <li>
-              <button type="button" class="button-1 animation">Sticky Top</button>
-            </li>
-            <li>
-              <button type="button" class="button-1 animation">Sticky Right</button>
-            </li>
-            <li>
-              <button type="button" class="button-1 animation">Sticky Bottom</button>
-            </li>
-            <li>
-              <button type="button" class="button-1 animation">Sticky Left</button>
-            </li>
-          </ul>
-          <nav role="navigation" class="standard col-sm-10 col-md-8 col-lg-4">
-            <div class="mobile-nav-icon" id="mobile-nav-icon">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <ul>
-              <li>
-                <a href="#text">Text</a>
-                <ul>
-                  <li><a href="#text__headings">Headings</a></li>
-                  <li><a href="#text__paragraphs">Paragraphs</a></li>
-                  <li><a href="#text__blockquotes">Blockquotes</a></li>
-                  <li><a href="#text__lists">Lists</a></li>
-                  <li><a href="#text__hr">Horizontal rules</a></li>
-                  <li><a href="#text__tables">Tabular data</a></li>
-                  <li><a href="#text__code">Code</a></li>
-                  <li><a href="#text__inline">Inline elements</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#embedded">Embedded content</a>
-                <ul>
-                  <li><a href="#embedded__images">Images</a></li>
-                  <li><a href="#embedded__audio">Audio</a></li>
-                  <li><a href="#embedded__video">Video</a></li>
-                  <li><a href="#embedded__canvas">Canvas</a></li>
-                  <li><a href="#embedded__meter">Meter</a></li>
-                  <li><a href="#embedded__progress">Progress</a></li>
-                  <li><a href="#embedded__svg">Inline SVG</a></li>
-                  <li><a href="#embedded__iframe">IFrames</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#forms">Form elements</a>
-                <ul>
-                  <li><a href="#forms__input">Input fields</a></li>
-                  <li><a href="#forms__select">Select menus</a></li>
-                  <li><a href="#forms__checkbox">Checkboxes</a></li>
-                  <li><a href="#forms__radio">Radio buttons</a></li>
-                  <li><a href="#forms__textareas">Textareas</a></li>
-                  <li><a href="#forms__html5">HTML5 inputs</a></li>
-                  <li><a href="#forms__action">Action buttons</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-          <main role="main">
-            <section id="text">
-              <header><h1>Text Styles</h1></header>
-              <article id="text__headings">
-                <header>
-                  <h1>Headings</h1>
-                </header>
-                <div>
-                  <h1>Heading 1</h1>
-                  <h2>Heading 2</h2>
-                  <h3>Heading 3</h3>
-                  <h4>Heading 4</h4>
-                  <h5>Heading 5</h5>
-                  <h6>Heading 6</h6>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__paragraphs">
-                <header><h1>Paragraphs</h1></header>
-                <div>
-                  <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not requiprimary by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__blockquotes">
-                <header><h1>Blockquotes</h1></header>
-                <div>
-                  <blockquote>
-                    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
-                    <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
-                    <cite><a href="#!">Said no one, ever.</a></cite>
-                  </blockquote>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__lists">
-                <header><h1>Lists</h1></header>
-                <div>
-                  <h3>Definition list</h3>
-                  <dl>
-                    <dt>Definition List Title</dt>
-                    <dd>This is a definition list division.</dd>
-                  </dl>
-                  <h3>Ordeprimary List</h3>
-                  <ol>
-                    <li>List Item 1</li>
-                    <li>List Item 2</li>
-                    <li>List Item 3</li>
-                  </ol>
-                  <h3>Unordeprimary List</h3>
-                  <ul>
-                    <li>List Item 1</li>
-                    <li>List Item 2</li>
-                    <li>List Item 3</li>
-                  </ul>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__hr">
-                <header><h1>Horizontal rules</h1></header>
-                <div>
-                  <hr>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__tables">
-                <header><h1>Tabular data</h1></header>
-                <table class="primary light">
-                  <caption>Table Caption</caption>
-                  <thead>
-                    <tr>
-                      <th>Table Heading 1</th>
-                      <th>Table Heading 2</th>
-                      <th>Table Heading 3</th>
-                      <th>Table Heading 4</th>
-                      <th>Table Heading 5</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Table Footer 1</th>
-                      <th>Table Footer 2</th>
-                      <th>Table Footer 3</th>
-                      <th>Table Footer 4</th>
-                      <th>Table Footer 5</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table class="secondary light">
-                  <caption>Table Caption</caption>
-                  <thead>
-                    <tr>
-                      <th>Table Heading 1</th>
-                      <th>Table Heading 2</th>
-                      <th>Table Heading 3</th>
-                      <th>Table Heading 4</th>
-                      <th>Table Heading 5</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Table Footer 1</th>
-                      <th>Table Footer 2</th>
-                      <th>Table Footer 3</th>
-                      <th>Table Footer 4</th>
-                      <th>Table Footer 5</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table class="primary dark">
-                  <caption>Table Caption</caption>
-                  <thead>
-                    <tr>
-                      <th>Table Heading 1</th>
-                      <th>Table Heading 2</th>
-                      <th>Table Heading 3</th>
-                      <th>Table Heading 4</th>
-                      <th>Table Heading 5</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Table Footer 1</th>
-                      <th>Table Footer 2</th>
-                      <th>Table Footer 3</th>
-                      <th>Table Footer 4</th>
-                      <th>Table Footer 5</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                    <tr>
-                      <td>Table Cell 1</td>
-                      <td>Table Cell 2</td>
-                      <td>Table Cell 3</td>
-                      <td>Table Cell 4</td>
-                      <td>Table Cell 5</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="flex-table secondary dark">
-                  <div class="flex-table-header">
-                    <div>Table Heading 1</div>
-                    <div>Table Heading 2</div>
-                    <div>Table Heading 3</div>
-                    <div>Table Heading 4</div>
-                    <div>Table Heading 5</div>
-                  </div>
-                  <div class="flex-table-body">
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                  </div>
-                  <div class="flex-table-footer">
-                    <div>Table Footer 1</div>
-                    <div>Table Footer 2</div>
-                    <div>Table Footer 3</div>
-                    <div>Table Footer 4</div>
-                    <div>Table Footer 5</div>
-                  </div>
-                </div>
-                <div class="flex-table primary light">
-                  <div class="flex-table-header">
-                    <div>Table Heading 1</div>
-                    <div>Table Heading 2</div>
-                    <div>Table Heading 3</div>
-                    <div>Table Heading 4</div>
-                    <div>Table Heading 5</div>
-                  </div>
-                  <div class="flex-table-body">
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                  </div>
-                  <div class="flex-table-footer">
-                    <div>Table Footer 1</div>
-                    <div>Table Footer 2</div>
-                    <div>Table Footer 3</div>
-                    <div>Table Footer 4</div>
-                    <div>Table Footer 5</div>
-                  </div>
-                </div>
-                <div class="flex-table secondary light">
-                  <div class="flex-table-header">
-                    <div>Table Heading 1</div>
-                    <div>Table Heading 2</div>
-                    <div>Table Heading 3</div>
-                    <div>Table Heading 4</div>
-                    <div>Table Heading 5</div>
-                  </div>
-                  <div class="flex-table-body">
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                    <div class="flex-table-row">
-                      <div>Table Cell 1</div>
-                      <div>Table Cell 2</div>
-                      <div>Table Cell 3</div>
-                      <div>Table Cell 4</div>
-                      <div>Table Cell 5</div>
-                    </div>
-                  </div>
-                  <div class="flex-table-footer">
-                    <div>Table Footer 1</div>
-                    <div>Table Footer 2</div>
-                    <div>Table Footer 3</div>
-                    <div>Table Footer 4</div>
-                    <div>Table Footer 5</div>
-                  </div>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__code">
-                <header><h1>Code</h1></header>
-                <div>
-                  <p class="modernize"><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
-                  <p><strong>Inline code:</strong> <code>&lt;div&gt;code&lt;/div&gt;</code></p>
-                  <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
-                  <h2>Pre-formatted text</h2>
-                  <pre>P R E F O R M A T T E D T E X T
-      ! " # $ % &amp; ' ( ) * + , - . /
-      0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
-      @ A B C D E F G H I J K L M N O
-      P Q R S T U V W X Y Z [ \ ] ^ _
-      ` a b c d e f g h i j k l m n o
-      p q r s t u v w x y z { | } ~ </pre>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="text__inline">
-                <header><h1>Inline elements</h1></header>
-                <div>
-                  <p><a href="#!">This is a text link</a>.</p>
-                  <p><strong>Strong is used to indicate strong importance.</strong></p>
-                  <p><em>This text has added emphasis.</em></p>
-                  <p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
-                  <p>The <i>i element</i> is text that is offset from the normal text.</p>
-                  <p>The <u>u element</u> is text with an unarticulated, though explicitly rendeprimary, non-textual annotation.</p>
-                  <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
-                  <p><s>This text has a strikethrough</s>.</p>
-                  <p>Superscript<sup>®</sup>.</p>
-                  <p>Subscript for things like H<sub>2</sub>O.</p>
-                  <p><small>This small text is small for for fine print, etc.</small></p>
-                  <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
-                  <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q></p>
-                  <p><cite>This is a citation.</cite></p>
-                  <p>The <dfn>dfn element</dfn> indicates a definition.</p>
-                  <p>The <mark>mark element</mark> indicates a highlight.</p>
-                  <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
-                  <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-            </section>
-
-            <section id="embedded">
-              <header><h1>Embedded content</h1></header>
-              <article id="embedded__images">
-                <header><h2>Images</h2></header>
-                <div>
-                  <h3>No <code>&lt;figure&gt;</code> element</h3>
-                  <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
-                  <h3>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></h3>
-                  <figure><img src="http://placekitten.com/420/420" alt="Image alt text"></figure>
-                  <h3>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></h3>
-                  <figure>
-                    <img src="http://placekitten.com/420/420" alt="Image alt text">
-                    <figcaption>Here is a caption for this image.</figcaption>
-                  </figure>
-                </div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__audio">
-                <header><h2>Audio</h2></header>
-                <div><audio controls="">audio</audio></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__video">
-                <header><h2>Video</h2></header>
-                <div><video controls="">video</video></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__canvas">
-                <header><h2>Canvas</h2></header>
-                <div><canvas>canvas</canvas></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__meter">
-                <header><h2>Meter</h2></header>
-                <div><meter value="2" min="0" max="10">2 out of 10</meter></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__progress">
-                <header><h2>Progress</h2></header>
-                <div><progress>progress</progress></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__svg">
-                <header><h2>Inline SVG</h2></header>
-                <div><svg width="100px" height="100px"><circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle></svg></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-              <article id="embedded__iframe">
-                <header><h2>IFrame</h2></header>
-                <div><iframe src="index.html" height="300"></iframe></div>
-                <footer><p><a href="#top">[Top]</a></p></footer>
-              </article>
-            </section>
-            <section id="forms">
-              <header><h1>Form elements</h1></header>
-              <form>
-                <fieldset id="forms__input">
-                  <legend>Input fields</legend>
-                  <p>
-                    <label for="input__text">Text Input</label>
-                    <input id="input__text" type="text" placeholder="Text Input">
-                  </p>
-                  <p>
-                    <label for="input__password">Password</label>
-                    <input id="input__password" type="password" placeholder="Type your Password">
-                  </p>
-                  <p>
-                    <label for="input__webaddress">Web Address</label>
-                    <input id="input__webaddress" type="url" placeholder="http://yoursite.com">
-                  </p>
-                  <p>
-                    <label for="input__emailaddress">Email Address</label>
-                    <input id="input__emailaddress" type="email" placeholder="name@email.com">
-                  </p>
-                  <p>
-                    <label for="input__phone">Phone Number</label>
-                    <input id="input__phone" type="tel" placeholder="(999) 999-9999">
-                  </p>
-                  <p>
-                    <label for="input__search">Search</label>
-                    <input id="input__search" type="search" placeholder="Enter Search Term">
-                  </p>
-                  <p>
-                    <label for="input__text2">Number Input</label>
-                    <input id="input__text2" type="number" placeholder="Enter a Number">
-                  </p>
-                  <p>
-                    <label for="input__text3" class="error">Error</label>
-                    <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
-                  </p>
-                  <p>
-                    <label for="input__text4" class="valid">Valid</label>
-                    <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
-                  </p>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__select">
-                  <legend>Select menus</legend>
-                  <p>
-                    <label for="select">Select</label>
-                    <select id="select">
-                      <optgroup label="Option Group">
-                        <option>Option One</option>
-                        <option>Option Two</option>
-                        <option>Option Three</option>
-                      </optgroup>
-                    </select>
-                  </p>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__checkbox">
-                  <legend>Checkboxes</legend>
-                  <ul class="list list--bare">
-                    <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
-                    <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-                    <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
-                  </ul>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__radio">
-                  <legend>Radio buttons</legend>
-                  <ul class="list list--bare">
-                    <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
-                    <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
-                    <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
-                  </ul>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__textareas">
-                  <legend>Textareas</legend>
-                  <p>
-                    <label for="textarea">Textarea</label>
-                    <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
-                  </p>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__html5">
-                  <legend>HTML5 inputs</legend>
-                  <p>
-                    <label for="ic">Color input</label>
-                    <input type="color" id="ic" value="#000000">
-                  </p>
-                  <p>
-                    <label for="in">Number input</label>
-                    <input type="number" id="in" min="0" max="10" value="5">
-                  </p>
-                  <p>
-                    <label for="ir">Range input</label>
-                    <input type="range" id="ir" value="10">
-                  </p>
-                  <p>
-                    <label for="idd">Date input</label>
-                    <input type="date" id="idd" value="1970-01-01">
-                  </p>
-                  <p>
-                    <label for="idm">Month input</label>
-                    <input type="month" id="idm" value="1970-01">
-                  </p>
-                  <p>
-                    <label for="idw">Week input</label>
-                    <input type="week" id="idw" value="1970-W01">
-                  </p>
-                  <p>
-                    <label for="idt">Datetime input</label>
-                    <input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
-                  </p>
-                  <p>
-                    <label for="idtl">Datetime-local input</label>
-                    <input type="datetime-local" id="idtl" value="1970-01-01T00:00">
-                  </p>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-                <fieldset id="forms__action">
-                  <legend>Action buttons</legend>
-                  <p>
-                    <input type="submit" value="<input type=submit>">
-                    <input type="button" value="<input type=button>">
-                    <input type="reset" value="<input type=reset>">
-                    <input type="submit" value="<input disabled>" disabled>
-                  </p>
-                  <p>
-                    <button type="submit">&lt;button type=submit&gt;</button>
-                    <button type="button">&lt;button type=button&gt;</button>
-                    <button type="reset">&lt;button type=reset&gt;</button>
-                    <button type="button" disabled>&lt;button disabled&gt;</button>
-                  </p>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-              </form>
-            </section>
-          </main>
-          <footer role="contentinfo">
-            <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
-          </footer>
+      <div class="df jcsa vw100">
+        <div class="vh10 vw10 db bgc-secondary"></div>
+        <div class="vh10 vw10 db bgc-secondary100"></div>
+        <div class="vh10 vw10 db bgc-secondary200"></div>
+        <div class="vh10 vw10 db bgc-secondary300"></div>
+        <div class="vh10 vw10 db bgc-secondary400"></div>
+        <div class="vh10 vw10 db bgc-secondary500"></div>
+        <div class="vh10 vw10 db bgc-secondary600"></div>
+        <div class="vh10 vw10 db bgc-secondary700"></div>
+        <div class="vh10 vw10 db bgc-secondary800"></div>
+        <div class="vh10 vw10 db bgc-secondary900"></div>
+      </div>
+      <h3>Choose Navigation Type</h3>
+      <div class="flex-list modernize" id="chooseNavStyle">
+        <button type="button" class="button-1 animation">Standard</button>
+        <button type="button" class="button-1 animation">Flyout</button>
+        <button type="button" class="button-1 animation">Sticky Top</button>
+        <button type="button" class="button-1 animation">Sticky Right</button>
+        <button type="button" class="button-1 animation">Sticky Bottom</button>
+        <button type="button" class="button-1 animation">Sticky Left</button>
+      </div>
+      <nav role="navigation" class="standard">
+        <input type="checkbox" class="mobile-nav-click">
+        <div class="mobile-nav-icon" class="mobile-nav-icon">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-      </body>
-    </html>
+        <ul>
+          <li>
+            <a href="#text">Text</a>
+            <ul>
+              <li><a href="#text__headings">Headings</a></li>
+              <li><a href="#text__paragraphs">Paragraphs</a></li>
+              <li><a href="#text__blockquotes">Blockquotes</a></li>
+              <li><a href="#text__lists">Lists</a></li>
+              <li><a href="#text__hr">Horizontal rules</a></li>
+              <li><a href="#text__tables">Tabular data</a></li>
+              <li><a href="#text__code">Code</a></li>
+              <li><a href="#text__inline">Inline elements</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#embedded">Embedded content</a>
+            <ul>
+              <li><a href="#embedded__images">Images</a></li>
+              <li><a href="#embedded__audio">Audio</a></li>
+              <li><a href="#embedded__video">Video</a></li>
+              <li><a href="#embedded__canvas">Canvas</a></li>
+              <li><a href="#embedded__meter">Meter</a></li>
+              <li><a href="#embedded__progress">Progress</a></li>
+              <li><a href="#embedded__svg">Inline SVG</a></li>
+              <li><a href="#embedded__iframe">IFrames</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#forms">Form elements</a>
+            <ul>
+              <li><a href="#forms__input">Input fields</a></li>
+              <li><a href="#forms__select">Select menus</a></li>
+              <li><a href="#forms__checkbox">Checkboxes</a></li>
+              <li><a href="#forms__radio">Radio buttons</a></li>
+              <li><a href="#forms__textareas">Textareas</a></li>
+              <li><a href="#forms__html5">HTML5 inputs</a></li>
+              <li><a href="#forms__action">Action buttons</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <main role="main">
+        <section id="text">
+          <header><h1>Text Styles</h1></header>
+          <article id="text__headings">
+            <header>
+              <h1>Headings</h1>
+            </header>
+            <div>
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__paragraphs">
+            <header><h1>Paragraphs</h1></header>
+            <div>
+              <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not requiprimary by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__blockquotes">
+            <header><h1>Blockquotes</h1></header>
+            <div>
+              <blockquote>
+                <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
+                <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
+                <cite><a href="#!">Said no one, ever.</a></cite>
+              </blockquote>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__lists">
+            <header><h1>Lists</h1></header>
+            <div>
+              <h3>Definition list</h3>
+              <dl>
+                <dt>Definition List Title</dt>
+                <dd>This is a definition list division.</dd>
+              </dl>
+              <h3>Ordeprimary List</h3>
+              <ol>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+              </ol>
+              <h3>Unordeprimary List</h3>
+              <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+              </ul>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__hr">
+            <header><h1>Horizontal rules</h1></header>
+            <div>
+              <hr>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__tables">
+            <header><h1>Tabular data</h1></header>
+            <table class="primary light">
+              <caption>Table Caption</caption>
+              <thead>
+                <tr>
+                  <th>Table Heading 1</th>
+                  <th>Table Heading 2</th>
+                  <th>Table Heading 3</th>
+                  <th>Table Heading 4</th>
+                  <th>Table Heading 5</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Table Footer 1</th>
+                  <th>Table Footer 2</th>
+                  <th>Table Footer 3</th>
+                  <th>Table Footer 4</th>
+                  <th>Table Footer 5</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="secondary light">
+              <caption>Table Caption</caption>
+              <thead>
+                <tr>
+                  <th>Table Heading 1</th>
+                  <th>Table Heading 2</th>
+                  <th>Table Heading 3</th>
+                  <th>Table Heading 4</th>
+                  <th>Table Heading 5</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Table Footer 1</th>
+                  <th>Table Footer 2</th>
+                  <th>Table Footer 3</th>
+                  <th>Table Footer 4</th>
+                  <th>Table Footer 5</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="primary dark">
+              <caption>Table Caption</caption>
+              <thead>
+                <tr>
+                  <th>Table Heading 1</th>
+                  <th>Table Heading 2</th>
+                  <th>Table Heading 3</th>
+                  <th>Table Heading 4</th>
+                  <th>Table Heading 5</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Table Footer 1</th>
+                  <th>Table Footer 2</th>
+                  <th>Table Footer 3</th>
+                  <th>Table Footer 4</th>
+                  <th>Table Footer 5</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+                <tr>
+                  <td>Table Cell 1</td>
+                  <td>Table Cell 2</td>
+                  <td>Table Cell 3</td>
+                  <td>Table Cell 4</td>
+                  <td>Table Cell 5</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="flex-table secondary dark">
+              <div class="flex-table-header">
+                <div>Table Heading 1</div>
+                <div>Table Heading 2</div>
+                <div>Table Heading 3</div>
+                <div>Table Heading 4</div>
+                <div>Table Heading 5</div>
+              </div>
+              <div class="flex-table-body">
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+              </div>
+              <div class="flex-table-footer">
+                <div>Table Footer 1</div>
+                <div>Table Footer 2</div>
+                <div>Table Footer 3</div>
+                <div>Table Footer 4</div>
+                <div>Table Footer 5</div>
+              </div>
+            </div>
+            <div class="flex-table primary light">
+              <div class="flex-table-header">
+                <div>Table Heading 1</div>
+                <div>Table Heading 2</div>
+                <div>Table Heading 3</div>
+                <div>Table Heading 4</div>
+                <div>Table Heading 5</div>
+              </div>
+              <div class="flex-table-body">
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+              </div>
+              <div class="flex-table-footer">
+                <div>Table Footer 1</div>
+                <div>Table Footer 2</div>
+                <div>Table Footer 3</div>
+                <div>Table Footer 4</div>
+                <div>Table Footer 5</div>
+              </div>
+            </div>
+            <div class="flex-table secondary light">
+              <div class="flex-table-header">
+                <div>Table Heading 1</div>
+                <div>Table Heading 2</div>
+                <div>Table Heading 3</div>
+                <div>Table Heading 4</div>
+                <div>Table Heading 5</div>
+              </div>
+              <div class="flex-table-body">
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+                <div class="flex-table-row">
+                  <div>Table Cell 1</div>
+                  <div>Table Cell 2</div>
+                  <div>Table Cell 3</div>
+                  <div>Table Cell 4</div>
+                  <div>Table Cell 5</div>
+                </div>
+              </div>
+              <div class="flex-table-footer">
+                <div>Table Footer 1</div>
+                <div>Table Footer 2</div>
+                <div>Table Footer 3</div>
+                <div>Table Footer 4</div>
+                <div>Table Footer 5</div>
+              </div>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__code">
+            <header><h1>Code</h1></header>
+            <div>
+              <p class="modernize"><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
+              <p><strong>Inline code:</strong> <code>&lt;div&gt;code&lt;/div&gt;</code></p>
+              <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
+              <h2>Pre-formatted text</h2>
+              <pre>P R E F O R M A T T E D T E X T
+    ! " # $ % &amp; ' ( ) * + , - . /
+    0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+    @ A B C D E F G H I J K L M N O
+    P Q R S T U V W X Y Z [ \ ] ^ _
+    ` a b c d e f g h i j k l m n o
+    p q r s t u v w x y z { | } ~ </pre>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="text__inline">
+            <header><h1>Inline elements</h1></header>
+            <div>
+              <p><a href="#!">This is a text link</a>.</p>
+              <p><strong>Strong is used to indicate strong importance.</strong></p>
+              <p><em>This text has added emphasis.</em></p>
+              <p>The <b>b element</b> is stylistically different text from normal text, without any special importance.</p>
+              <p>The <i>i element</i> is text that is offset from the normal text.</p>
+              <p>The <u>u element</u> is text with an unarticulated, though explicitly rendeprimary, non-textual annotation.</p>
+              <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
+              <p><s>This text has a strikethrough</s>.</p>
+              <p>Superscript<sup>®</sup>.</p>
+              <p>Subscript for things like H<sub>2</sub>O.</p>
+              <p><small>This small text is small for for fine print, etc.</small></p>
+              <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+              <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation.</q></p>
+              <p><cite>This is a citation.</cite></p>
+              <p>The <dfn>dfn element</dfn> indicates a definition.</p>
+              <p>The <mark>mark element</mark> indicates a highlight.</p>
+              <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
+              <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+        </section>
+
+        <section id="embedded">
+          <header><h1>Embedded content</h1></header>
+          <article id="embedded__images">
+            <header><h2>Images</h2></header>
+            <div>
+              <h3>No <code>&lt;figure&gt;</code> element</h3>
+              <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
+              <h3>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></h3>
+              <figure><img src="http://placekitten.com/420/420" alt="Image alt text"></figure>
+              <h3>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></h3>
+              <figure>
+                <img src="http://placekitten.com/420/420" alt="Image alt text">
+                <figcaption>Here is a caption for this image.</figcaption>
+              </figure>
+            </div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__audio">
+            <header><h2>Audio</h2></header>
+            <div><audio controls="">audio</audio></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__video">
+            <header><h2>Video</h2></header>
+            <div><video controls="">video</video></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__canvas">
+            <header><h2>Canvas</h2></header>
+            <div><canvas>canvas</canvas></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__meter">
+            <header><h2>Meter</h2></header>
+            <div><meter value="2" min="0" max="10">2 out of 10</meter></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__progress">
+            <header><h2>Progress</h2></header>
+            <div><progress>progress</progress></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__svg">
+            <header><h2>Inline SVG</h2></header>
+            <div><svg width="100px" height="100px"><circle cx="100" cy="100" r="100" fill="#1fa3ec"></circle></svg></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+          <article id="embedded__iframe">
+            <header><h2>IFrame</h2></header>
+            <div><iframe src="index.html" height="300"></iframe></div>
+            <footer><p><a href="#top">[Top]</a></p></footer>
+          </article>
+        </section>
+        <section id="forms">
+          <header><h1>Form elements</h1></header>
+          <form>
+            <fieldset id="forms__input">
+              <legend>Input fields</legend>
+              <p>
+                <label for="input__text">Text Input</label>
+                <input id="input__text" type="text" placeholder="Text Input">
+              </p>
+              <p>
+                <label for="input__password">Password</label>
+                <input id="input__password" type="password" placeholder="Type your Password">
+              </p>
+              <p>
+                <label for="input__webaddress">Web Address</label>
+                <input id="input__webaddress" type="url" placeholder="http://yoursite.com">
+              </p>
+              <p>
+                <label for="input__emailaddress">Email Address</label>
+                <input id="input__emailaddress" type="email" placeholder="name@email.com">
+              </p>
+              <p>
+                <label for="input__phone">Phone Number</label>
+                <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+              </p>
+              <p>
+                <label for="input__search">Search</label>
+                <input id="input__search" type="search" placeholder="Enter Search Term">
+              </p>
+              <p>
+                <label for="input__text2">Number Input</label>
+                <input id="input__text2" type="number" placeholder="Enter a Number">
+              </p>
+              <p>
+                <label for="input__text3" class="error">Error</label>
+                <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
+              </p>
+              <p>
+                <label for="input__text4" class="valid">Valid</label>
+                <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
+              </p>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+            <fieldset id="forms__select">
+              <legend>Select menus</legend>
+              <p>
+                <label for="select">Select</label>
+                <select id="select">
+                  <optgroup label="Option Group">
+                    <option>Option One</option>
+                    <option>Option Two</option>
+                    <option>Option Three</option>
+                  </optgroup>
+                </select>
+              </p>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+            <fieldset id="forms__checkbox">
+              <legend>Checkboxes</legend>
+              <ul class="list list--bare">
+                <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
+                <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
+                <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+              </ul>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+            <fieldset id="forms__radio">
+              <legend>Radio buttons</legend>
+              <ul class="list list--bare">
+                <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
+                <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
+                <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
+              </ul>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+            <fieldset id="forms__textareas">
+              <legend>Textareas</legend>
+              <p>
+                <label for="textarea">Textarea</label>
+                <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+              </p>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+            <fieldset id="forms__html5">
+              <legend>HTML5 inputs</legend>
+              <p>
+                <label for="ic">Color input</label>
+                <input type="color" id="ic" value="#000000">
+              </p>
+              <p>
+                <label for="in">Number input</label>
+                <input type="number" id="in" min="0" max="10" value="5">
+              </p>
+              <p>
+                <label for="ir">Range input</label>
+                <input type="range" id="ir" value="10">
+              </p>
+              <p>
+                <label for="idd">Date input</label>
+                <input type="date" id="idd" value="1970-01-01">
+              </p>
+              <p>
+                <label for="idm">Month input</label>
+                <input type="month" id="idm" value="1970-01">
+              </p>
+              <p>
+                <label for="idw">Week input</label>
+                <input type="week" id="idw" value="1970-W01">
+              </p>
+              <p>
+                <label for="idt">Datetime input</label>
+                <input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
+              </p>
+              <p>
+                <label for="idtl">Datetime-local input</label>
+                <input type="datetime-local" id="idtl" value="1970-01-01T00:00">
+              </p>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+            <fieldset id="forms__action">
+              <legend>Action buttons</legend>
+              <p>
+                <input type="submit" value="<input type=submit>">
+                <input type="button" value="<input type=button>">
+                <input type="reset" value="<input type=reset>">
+                <input type="submit" value="<input disabled>" disabled>
+              </p>
+              <p>
+                <button type="submit">&lt;button type=submit&gt;</button>
+                <button type="button">&lt;button type=button&gt;</button>
+                <button type="reset">&lt;button type=reset&gt;</button>
+                <button type="button" disabled>&lt;button disabled&gt;</button>
+              </p>
+            </fieldset>
+            <p><a href="#top">[Top]</a></p>
+          </form>
+        </section>
+      </main>
+      <footer role="contentinfo">
+        <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
+      </footer>
+    </div>
 
   </body>
 </html>

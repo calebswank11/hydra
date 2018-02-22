@@ -18,7 +18,7 @@
     font-size: $modular-scale;
   }
   // define mobile font sizes
-  @media screen and (max-width: #{$minScreenSize}px) {
+  screenQueryMax(#{$minScreenSize}px) {
     .text#{$i}00,
     h#{7 - $i} {
       font-size: $modular-scale-mobile;
@@ -240,6 +240,9 @@
   }
   .zi#{$i}0 {
     z-index: #{$i}0;
+  }
+  .zi#{$i}00 {
+    z-index: #{$i}00;
   }
 }
 

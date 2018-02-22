@@ -1,4 +1,5 @@
 @import "../functions/functions.scss";
+@import "../variables/variables.scss";
 @mixin table {
   @extend .bw100;
   @extend .border-solid;

@@ -1,3 +1,7 @@
+@import "../variables/colors.scss";
+@import "../variables/variables.scss";
+@import "../functions/functions.scss";
+
 // buttons
 $button1FontSize: "fntsz200"; // put these all into an array and run for loop on them
 $button1PaddingLR: "plr400";
@@ -40,9 +44,12 @@ $bdrdsArray: (
      ($button1Color, "color"),
      ($button1Border, "border")
   );
-
-  //testing commit
-  // ln 1281
+  &.active {
+    &::before {
+      @extend .w100;
+      @extend .h100;
+    }
+  }
   .button-1 {
     @each $number in $buttonOneArray {
       @if type-of(nth($number, 1)) == string {
@@ -68,8 +75,8 @@ $bdrdsArray: (
       @extend .posa;
       @extend .trans;
       opacity: 0;
-      height: 100%;
-      width: 100%;
+      @extend .w100;
+      @extend .h100;
       z-index: -1;
     }
     &.animation {
