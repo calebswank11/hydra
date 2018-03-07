@@ -63,7 +63,19 @@
               <li><a href="#text__hr">Horizontal rules</a></li>
               <li><a href="#text__tables">Tabular data</a></li>
               <li><a href="#text__code">Code</a></li>
-              <li><a href="#text__inline">Inline elements</a></li>
+              <li>
+                <a href="#text__inline">Inline elements</a>
+                <ul>
+                  <li><a href="#text__headings">Headings</a></li>
+                  <li><a href="#text__paragraphs">Paragraphs</a></li>
+                  <li><a href="#text__blockquotes">Blockquotes</a></li>
+                  <li><a href="#text__lists">Lists</a></li>
+                  <li><a href="#text__hr">Horizontal rules</a></li>
+                  <li><a href="#text__tables">Tabular data</a></li>
+                  <li><a href="#text__code">Code</a></li>
+                  <li><a href="#text__inline">Inline elements</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li>
@@ -120,7 +132,7 @@
           <article id="text__blockquotes">
             <header><h1>Blockquotes</h1></header>
             <div>
-              <blockquote>
+              <blockquote class="designer">
                 <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text.</p>
                 <p>It is typically distinguished visually using indentation and a different typeface or smaller size quotation. It may or may not include a citation, usually placed at the bottom.</p>
                 <cite><a href="#!">Said no one, ever.</a></cite>
@@ -154,14 +166,29 @@
           <article id="text__hr">
             <header><h1>Horizontal rules</h1></header>
             <div>
+              <i>normal</i>
               <hr>
+              <i> classes = large solid</i>
+              <hr class="large solid">
+              <i> classes = primary solid</i>
+              <hr class="primary solid">
+              <i> classes = secondary solid</i>
+              <hr class="secondary solid">
+              <i> classes = primary light solid</i>
+              <hr class="primary light solid">
+              <i> classes = secondary light solid</i>
+              <hr class="secondary light solid">
+              <i> classes = primary light large solid</i>
+              <hr class="primary light large solid">
+              <i> classes = secondary light large solid</i>
+              <hr class="secondary light large solid">
             </div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
           <article id="text__tables">
             <header><h1>Tabular data</h1></header>
             <table class="primary light">
-              <caption>Table Caption</caption>
+              <caption>Table Caption - class = primary light</caption>
               <thead>
                 <tr>
                   <th>Table Heading 1</th>
@@ -212,7 +239,7 @@
               </tbody>
             </table>
             <table class="secondary light">
-              <caption>Table Caption</caption>
+              <caption>Table Caption - class = secondary light</caption>
               <thead>
                 <tr>
                   <th>Table Heading 1</th>
@@ -263,7 +290,7 @@
               </tbody>
             </table>
             <table class="primary dark">
-              <caption>Table Caption</caption>
+              <caption>Table Caption - class = primary dark</caption>
               <thead>
                 <tr>
                   <th>Table Heading 1</th>
@@ -320,6 +347,9 @@
                 <div>Table Heading 3</div>
                 <div>Table Heading 4</div>
                 <div>Table Heading 5</div>
+                <div>Table Heading 6</div>
+                <div>Table Heading 7</div>
+                <div>Table Heading 8</div>
               </div>
               <div class="flex-table-body">
                 <div class="flex-table-row">
@@ -328,6 +358,9 @@
                   <div>Table Cell 3</div>
                   <div>Table Cell 4</div>
                   <div>Table Cell 5</div>
+                  <div>Table Cell 6</div>
+                  <div>Table Cell 7</div>
+                  <div>Table Cell 8</div>
                 </div>
                 <div class="flex-table-row">
                   <div>Table Cell 1</div>
@@ -335,6 +368,9 @@
                   <div>Table Cell 3</div>
                   <div>Table Cell 4</div>
                   <div>Table Cell 5</div>
+                  <div>Table Cell 6</div>
+                  <div>Table Cell 7</div>
+                  <div>Table Cell 8</div>
                 </div>
                 <div class="flex-table-row">
                   <div>Table Cell 1</div>
@@ -342,6 +378,9 @@
                   <div>Table Cell 3</div>
                   <div>Table Cell 4</div>
                   <div>Table Cell 5</div>
+                  <div>Table Cell 6</div>
+                  <div>Table Cell 7</div>
+                  <div>Table Cell 8</div>
                 </div>
                 <div class="flex-table-row">
                   <div>Table Cell 1</div>
@@ -349,6 +388,9 @@
                   <div>Table Cell 3</div>
                   <div>Table Cell 4</div>
                   <div>Table Cell 5</div>
+                  <div>Table Cell 6</div>
+                  <div>Table Cell 7</div>
+                  <div>Table Cell 8</div>
                 </div>
                 <div class="flex-table-row">
                   <div>Table Cell 1</div>
@@ -356,6 +398,9 @@
                   <div>Table Cell 3</div>
                   <div>Table Cell 4</div>
                   <div>Table Cell 5</div>
+                  <div>Table Cell 6</div>
+                  <div>Table Cell 7</div>
+                  <div>Table Cell 8</div>
                 </div>
               </div>
               <div class="flex-table-footer">
@@ -364,6 +409,9 @@
                 <div>Table Footer 3</div>
                 <div>Table Footer 4</div>
                 <div>Table Footer 5</div>
+                <div>Table Footer 6</div>
+                <div>Table Footer 7</div>
+                <div>Table Footer 8`</div>
               </div>
             </div>
             <div class="flex-table primary light">

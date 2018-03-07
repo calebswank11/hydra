@@ -90,7 +90,7 @@
     @extend .blw000;
     @extend .brw000;
     @extend .border-solid;
-    margin: 0 auto;
+    @extend .m-auto;
     @extend .mt200;
     @extend .mb200;
     p {
@@ -98,6 +98,46 @@
       @extend .db;
       @extend .tac;
       @extend .fw400;
+    }
+    &.large {
+      @extend .ptb500;
+      @extend .btw700;
+      @extend .bbw700;
+      @extend .w100;
+      @extend .maw1000;
+      p {
+        @extend .text500;
+        @extend .w70;
+        @extend .m-auto;
+      }
+    }
+    &.small {
+      @extend .ptb200;
+      @extend .btw500;
+      @extend .bbw500;
+      @extend .w50;
+      p {
+        @extend .text200;
+      }
+    }
+    &.designer {
+      @extend .posr;
+      &::before {
+        content: "\201C \00a0 \201D";
+        @extend .text800;
+        @extend .fsi;
+        @extend .posa;
+        @extend .trans;
+        @extend .db;
+        @extend .zi1-n;
+        @extend .op20;
+        font-family: serif;
+      }
+      &.large {
+        &::before {
+          @extend .text900;
+        }
+      }
     }
   }
   cite {
@@ -177,5 +217,22 @@
   }
   abbr {
     @extend .color-secondary200;
+  }
+}
+hr {
+  &.solid {
+    @extend .border-solid;
+  }
+  &.large {
+    @extend .bw300;
+  }
+  &.primary {
+    @extend .bdc-primary;
+  }
+  &.secondary {
+    @extend .bdc-secondary;
+  }
+  &.light {
+    @extend .op50;
   }
 }

@@ -25,24 +25,41 @@
       @extend .pad100;
       transition: background-color 0.5s ease, color 0.5s ease;
     }
-    a:hover {
-      @extend .bgc-grey200;
-      @extend .color-secondary300;
-    }
+    // a:hover {
+    //   @extend .bgc-grey200;
+    //   @extend .color-secondary300;
+    // }
     span {
       @extend .color-grey400;
     }
     &.testing123 {
       display: none !important;
     }
+    a {
+      & ~ ul {
+        @extend .mah000;
+        @extend .ovh;
+        transition: transitionFunct(max-height);
+        &:hover {
+          @extend .mah1000;
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+        & ~ ul {
+          @extend .mah1000;
+        }
+      }
+    }
     ul {
       li {
         @extend .lstn;
-        @extend .ovh;
-        & > ul {
-          @extend .h-0px;
-          transition: height 0.25s ease;
-        }
+        // @extend .ovh;
+        // & > ul {
+        //   @extend .bgc-primary300;
+        //   transition: height 0.25s ease;
+        // }
         // > a {
         //   &:hover {
         //     ~ ul {
@@ -50,11 +67,11 @@
         //     }
         //   }
         // }
-        &:hover {
-          & > ul {
-            height: auto;
-          }
-        }
+        // &:hover {
+        //   & > ul {
+        //     height: auto;
+        //   }
+        // }
       }
     }
     //navigation types
@@ -66,10 +83,10 @@
       a {
         background-color: $white;
         @extend .color-secondary400;
-        &:hover {
-          @extend .bgc-primary300;
-          @extend .color-secondary300;
-        }
+        // &:hover {
+        //   @extend .bgc-primary300;
+        //   @extend .color-secondary300;
+        // }
       }
       & > ul {
         @extend .df;
@@ -154,19 +171,23 @@
             @extend .zi1;
             @extend .posr;
           }
-          &:hover {
-            & > a {
-              @extend .bgc-primary200;
-              @extend .bxshVert1;
-            }
-          }
-          li {
-            &:hover {
-              & > a {
-                @extend .bgc-primary300;
-              }
-            }
-          }
+          // &:hover {
+          //   & > a {
+          //     @extend .bgc-primary200;
+          //     @extend .bxshVert1;
+          //   }
+          // }
+          // li {
+          //   &:hover {
+          //     & > a {
+          //       @extend .bgc-primary300;
+          //     }
+          //   }
+          // }
+        }
+      }
+      a {
+        &:hover {
         }
       }
       ul {
